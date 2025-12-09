@@ -16,7 +16,7 @@ export default function BookingPage() {
     e.currentTarget.value = v;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const selectedTime = `${hour}:${minute} ${period}`;
     alert(`Form submitted! Event Time: ${selectedTime}`);
