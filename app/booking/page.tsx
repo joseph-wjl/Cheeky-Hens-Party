@@ -8,12 +8,12 @@ export default function BookingPage() {
   const [period, setPeriod] = useState("");
 
   // phone formatter (no useState)
-  const formatPhone = (e) => {
-    let v = e.target.value.replace(/\D/g, "").slice(0, 8);
+  const formatPhone = (e: React.FormEvent<HTMLInputElement>) => {
+    let v = e.currentTarget.value.replace(/\D/g, "").slice(0, 8);
     if (v.length > 4) {
       v = v.slice(0, 4) + "-" + v.slice(4);
     }
-    e.target.value = v;
+    e.currentTarget.value = v;
   };
 
   const handleSubmit = (e) => {
