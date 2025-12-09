@@ -115,7 +115,7 @@ export default function BookingPage() {
                 <label className="block mb-1">Message</label>
                 <textarea
                   required
-                  rows="6"
+                  rows={6}
                   className="w-full border p-3 resize-none bg-white"
                 />
               </div>
