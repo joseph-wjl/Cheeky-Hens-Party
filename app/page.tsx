@@ -18,7 +18,7 @@ export default function Home() {
           </p>
 
           <a
-            href="/packages"
+            href="#idea"
             className="px-15 py-3 text-white border border-white hover:text-black hover:border-black transition"
           >
             Get Started
@@ -87,7 +87,7 @@ export default function Home() {
             {/* box ends */}
 
           <a
-            href="/packages"
+            href="/booking"
             className="px-15 py-3 text-white border border-white hover:text-black hover:border-black transition"
           >
             Book Now!
@@ -224,8 +224,9 @@ export default function Home() {
           </div>
 
           <div className="p-5">
-            <h3 className="text-2xl pb-2">Where can we do the Life Drawing Class?</h3>
-            <p></p>
+            <h3 className="text-2xl pb-2">Where can we host the class?</h3>
+            <p>The session works best in a private indoor space such as a hotel suite, function room, home, or Airbnb.
+              <br></br>If you don’t have a location in mind, we can help arrange a venue for you for a small booking fee, or you’re welcome to host the session in our art studio.</p>
           </div>
 
           <div className="p-5 pb-20">

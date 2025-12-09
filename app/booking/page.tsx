@@ -84,16 +84,30 @@ export default function BookingPage() {
                   </optgroup>
 
                   <optgroup label="New Territories">
-                    <option>Islands</option>
+                    <option>Tsuen Wan</option>
+                    <option>Tuen Mun</option>
+                    <option>Yuen Long</option>
                     <option>Kwai Tsing</option>
                     <option>North</option>
                     <option>Sai Kung</option>
                     <option>Sha Tin</option>
                     <option>Tai Po</option>
-                    <option>Tsuen Wan</option>
-                    <option>Tuen Mun</option>
-                    <option>Yuen Long</option>
+                    <option>Islands</option>
                   </optgroup>
+
+                  <optgroup label="Our Studio Location">
+                    <option>To Kwa Wan</option>
+                  </optgroup>
+
+                </select>
+              </div>
+
+              <div>
+                <label className="block mb-1">Art Instructor Needed?</label>
+                <select required className="w-full border p-3 h-13 bg-white">
+                  <option value="">Select Option</option>
+                  <option>No</option>
+                  <option>Yes (+$700)</option>
                 </select>
               </div>
 
@@ -137,6 +151,16 @@ export default function BookingPage() {
                   <option>Classic Life Drawing</option>
                   <option>Cheeky Butler</option>
                   <option>Nude Paint & Sip</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block mb-1">Event Duration</label>
+                <select required className="w-full border p-3 h-13 bg-white">
+                  <option value="">Select Duration</option>
+                  <option>2 hours</option>
+                  <option>2.5 hours</option>
+                  <option>3 hours</option>
                 </select>
               </div>
 
