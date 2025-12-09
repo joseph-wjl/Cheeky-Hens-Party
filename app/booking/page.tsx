@@ -138,7 +138,7 @@ export default function BookingPage() {
                 <input
                   type="text"
                   required
-                  maxLength="9"
+                  maxLength={9}
                   onInput={(e) => formatPhone(e)}
                   className="w-full border p-3 bg-white"
                 />
