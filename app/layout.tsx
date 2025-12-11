@@ -11,8 +11,56 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Cheeky Hens",
-  description: "Fun, cheeky, creative hen party life modelling experiences.",
+  title: "Cheeky Hen Party | Life Drawing & Creative Hen Party Experiences HK",
+  description: "Fun, cheeky, and creative hen party life drawing experiences in Hong Kong. Sip, sketch, laugh and make unforgettable memories with your friends.",
+  keywords: [
+    "Hen Party Hong Kong",
+    "Bachelorette Party",
+    "Hen Night",
+    "Life Drawing",
+    "Male Model",
+    "Cheeky Hen Party",
+    "Party Ideas HK",
+    "Creative Events HK",
+    "Adult Art Classes",
+    "Sip and Sketch",
+    "Party Entertainment Hong Kong"
+  ],
+  openGraph: {
+    title: "Cheeky Hen Party | Life Drawing & Creative Hen Party Experiences HK",
+    description: "Fun, cheeky, and creative hen party life drawing experiences in Hong Kong. Sip, sketch, laugh and make unforgettable memories with your friends.",
+    url: "https://www.cheekyhenparty.com",
+    siteName: "Cheeky Hen Party",
+    images: [
+      {
+        url: "https://www.cheekyhenparty.com/images/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cheeky Hen Party Life Drawing in Hong Kong"
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@cheekyhenparty",
+    title: "Cheeky Hen Party | Life Drawing & Creative Hen Party Experiences HK",
+    description: "Fun, cheeky, and creative hen party life drawing experiences in Hong Kong. Sip, sketch, laugh and make unforgettable memories with your friends.",
+    images: ["https://www.cheekyhenparty.com/images/hero.jpg"],
+  },
+  structuredData: {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Cheeky Hen Party Life Drawing",
+    "description": "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
+    "url": "https://www.cheekyhenparty.com",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Private indoor venues in Hong Kong"
+    }
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -42,6 +90,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gtag('config', 'G-PNTWVS7M6P', { page_path: window.location.pathname });
             `,
           }}
+        />
+
+        {/* Structured data JSON-LD */}
+        <Script
+          type="application/ld+json"
+          id="structured-data"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.structuredData) }}
         />
 
         <Navbar />
