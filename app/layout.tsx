@@ -93,41 +93,81 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
 
-        {/* JSON-LD Event Structured Data */}
-        <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Event",
-              "name": "Cheeky Hen Party Life Drawing",
-              "description": "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
-              "url": "https://www.cheekyhenparty.com/",
-              "startDate": "2025-12-20T19:00",       // replace with actual future event date/time
-              "endDate": "2025-12-20T21:00",         // optional
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "Private indoor venue in Hong Kong"
-              },
-              "organizer": {
-                "@type": "Organization",
-                "name": "Cheeky Hen Party",
-                "url": "https://www.cheekyhenparty.com/"
-              },
-              "image": "https://www.cheekyhenparty.com/images/hero.jpg",
-              "offers": {
-                "@type": "Offer",
-                "url": "https://www.cheekyhenparty.com/booking",
-                "price": "300",
-                "priceCurrency": "HKD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2025-12-11T00:00"
-              }
-            })
-          }}
-        />
+        {/* Structured Data */}
+<Script
+  id="structured-data"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://cheekyhenparty.com/#business",
+      "name": "Cheeky Hen Party Hong Kong",
+      "description": "Fun, cheeky, creative hen party life drawing experiences in Hong Kong.",
+      "url": "https://cheekyhenparty.com",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Hong Kong"
+      },
+      "serviceArea": {
+        "@type": "AdministrativeArea",
+        "name": "Hong Kong"
+      },
+      "image": "https://cheekyhenparty.com/social-preview.jpg",
+      "sameAs": [
+        "https://www.instagram.com/cheekyhenpartyhk"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "HKD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://cheekyhenparty.com"
+      }
+    })
+  }}
+/>
+
+<Script
+  id="event-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Cheeky Hen Party Life Drawing",
+      "description": "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "startDate": "2024-01-01",
+      "endDate": "2025-12-31",
+      "location": {
+        "@type": "Place",
+        "name": "Hong Kong Indoor Venues",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hong Kong",
+          "addressRegion": "HK"
+        }
+      },
+      "image": [
+        "https://cheekyhenparty.com/social-preview.jpg"
+      ],
+      "url": "https://cheekyhenparty.com",
+      "performer": {
+        "@type": "Person",
+        "name": "Professional Male Model"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "1800",
+        "priceCurrency": "HKD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://cheekyhenparty.com"
+      }
+    })
+  }}
+/>
+
 
         <Navbar />
         <main className="min-h-screen">{children}</main>
