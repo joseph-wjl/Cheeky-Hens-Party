@@ -8,8 +8,10 @@ export default function BookingPage() {
   const [minute, setMinute] = useState("");
   const [period, setPeriod] = useState("");
 
-  const [state, handleSubmitFormspree] = useForm("myzrbzgk");
+  // Formspree setup
+  const [state, handleSubmitSpree] = useForm("myzrbzgk"); // your Formspree form ID
 
+  // phone formatter (no useState)
   const formatPhone = (e: React.FormEvent<HTMLInputElement>) => {
     let v = e.currentTarget.value.replace(/\D/g, "").slice(0, 8);
     if (v.length > 4) {
@@ -22,8 +24,18 @@ export default function BookingPage() {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
+
+    const firstName = formData.get("firstName") || "";
+    const lastName = formData.get("lastName") || "";
+    const email = formData.get("email") || "";
+    const phone = formData.get("phone") || "";
     const location = formData.get("location") || "";
+    const instructor = formData.get("instructor") || "";
     const eventType = formData.get("eventType") || "";
+    const duration = formData.get("duration") || "";
+    const date = formData.get("date") || "";
+    const message = formData.get("message") || "";
+
     const selectedTime = `${hour}:${minute} ${period}`;
 
     // GA4 tracking
@@ -36,21 +48,15 @@ export default function BookingPage() {
     }
 
     // Submit to Formspree
-    handleSubmitFormspree(e);
-
-    // Reset time fields
-    setHour("");
-    setMinute("");
-    setPeriod("");
+    handleSubmitSpree(e);
   };
 
   if (state.succeeded) {
     return (
       <div className="px-6 py-20 text-center text-[#82310e] bg-[#FEEFEC]">
-        <h1 className="text-4xl font-bold mb-4">Booking Submitted!</h1>
+        <h1 className="text-4xl font-bold mb-6">Booking Received!</h1>
         <p className="text-xl">
-          Thank you! We have received your booking request and will get back to
-          you within 24 hours.
+          Thanks for your request. We’ll get back to you within 24 hours.
         </p>
       </div>
     );
@@ -60,7 +66,9 @@ export default function BookingPage() {
     <>
       <div className="px-6 py-20 bg-[#FEEFEC] text-center text-[#82310e]">
         <h1 className="text-6xl font-bold mb-10">Booking Request Form</h1>
-        <h2 className="text-2xl mb-8">Let's Create Something Beautiful (and a little cheeky!)</h2>
+        <h2 className="text-2xl mb-8">
+          Let's Create Something Beautiful (and a little cheeky!)
+        </h2>
         <p className="mb-5">
           Use the form below to check availability, request a quote or any other
           questions you may have on our Hens Party Packages.
@@ -72,25 +80,44 @@ export default function BookingPage() {
       </div>
 
       <div className="px-6 py-20 flex justify-center bg-[#FCCFC5]">
-        <form className="p-10 max-w-5xl mx-auto" onSubmit={handleSubmit}>
-          <input type="text" name="_gotcha" style={{ display: "none" }} />
-
+        <form
+          className="p-10 max-w-5xl mx-auto"
+          onSubmit={handleSubmit}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* LEFT COLUMN */}
             <div className="flex flex-col gap-6">
               <div>
                 <label className="block mb-1">First Name</label>
-                <input name="firstName" type="text" required pattern="[A-Za-z ]+" className="w-full border p-3 bg-white" />
-                <ValidationError prefix="First Name" field="firstName" errors={state.errors} />
+                <input
+                  name="firstName"
+                  type="text"
+                  required
+                  pattern="[A-Za-z ]+"
+                  className="w-full border p-3 bg-white"
+                  tabIndex={1}
+                />
               </div>
+
               <div>
                 <label className="block mb-1">Email</label>
-                <input name="email" type="email" required className="w-full border p-3 bg-white" />
-                <ValidationError prefix="Email" field="email" errors={state.errors} />
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  className="w-full border p-3 bg-white"
+                  tabIndex={3}
+                />
               </div>
+
               <div>
                 <label className="block mb-1">Event Location</label>
-                <select name="location" required className="w-full border p-3 h-13 bg-white">
+                <select
+                  name="location"
+                  required
+                  className="w-full border p-3 h-13 bg-white"
+                  tabIndex={5}
+                >
                   <option value="">Select Event Location</option>
                   <optgroup label="Hong Kong Island">
                     <option>Central & Western</option>
@@ -121,18 +148,30 @@ export default function BookingPage() {
                   </optgroup>
                 </select>
               </div>
+
               <div>
                 <label className="block mb-1">Art Instructor Needed?</label>
-                <select name="instructor" required className="w-full border p-3 h-13 bg-white">
+                <select
+                  name="instructor"
+                  required
+                  className="w-full border p-3 h-13 bg-white"
+                  tabIndex={7}
+                >
                   <option value="">Select Option</option>
                   <option>No</option>
                   <option>Yes (+$700)</option>
                 </select>
               </div>
+
               <div>
                 <label className="block mb-1">Message</label>
-                <textarea name="message" required rows={6} className="w-full border p-3 resize-none bg-white" />
-                <ValidationError prefix="Message" field="message" errors={state.errors} />
+                <textarea
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full border p-3 resize-none bg-white"
+                  tabIndex={11}
+                />
               </div>
             </div>
 
@@ -140,50 +179,107 @@ export default function BookingPage() {
             <div className="flex flex-col gap-6">
               <div>
                 <label className="block mb-1">Last Name</label>
-                <input name="lastName" type="text" required pattern="[A-Za-z ]+" className="w-full border p-3 bg-white" />
-                <ValidationError prefix="Last Name" field="lastName" errors={state.errors} />
+                <input
+                  name="lastName"
+                  type="text"
+                  required
+                  pattern="[A-Za-z ]+"
+                  className="w-full border p-3 bg-white"
+                  tabIndex={2}
+                />
               </div>
+
               <div>
                 <label className="block mb-1">Phone</label>
-                <input name="phone" type="text" required maxLength={9} onInput={(e) => formatPhone(e)} className="w-full border p-3 bg-white" />
+                <input
+                  name="phone"
+                  type="text"
+                  required
+                  maxLength={9}
+                  onInput={(e) => formatPhone(e)}
+                  className="w-full border p-3 bg-white"
+                  tabIndex={4}
+                />
               </div>
+
               <div>
                 <label className="block mb-1">Event Type</label>
-                <select name="eventType" required className="w-full border p-3 h-13 bg-white">
+                <select
+                  name="eventType"
+                  required
+                  className="w-full border p-3 h-13 bg-white"
+                  tabIndex={6}
+                >
                   <option value="">Select Event Type</option>
                   <option>Classic Life Drawing</option>
                   <option>Cheeky Butler</option>
                   <option>Nude Paint & Sip</option>
                 </select>
               </div>
+
               <div>
                 <label className="block mb-1">Event Duration</label>
-                <select name="duration" required className="w-full border p-3 h-13 bg-white">
+                <select
+                  name="duration"
+                  required
+                  className="w-full border p-3 h-13 bg-white"
+                  tabIndex={8}
+                >
                   <option value="">Select Duration</option>
                   <option>2 hours</option>
                   <option>2.5 hours</option>
                   <option>3 hours</option>
                 </select>
               </div>
+
               <div>
                 <label className="block mb-1">Event Date</label>
-                <input name="date" type="date" required className="w-full border p-3 bg-white" />
+                <input
+                  name="date"
+                  type="date"
+                  required
+                  className="w-full border p-3 bg-white"
+                  tabIndex={9}
+                />
               </div>
+
               <div>
                 <label className="block mb-1">Event Time</label>
                 <div className="flex gap-2">
-                  <select name="hour" required value={hour} onChange={(e) => setHour(e.target.value)} className="w-1/3 border p-3 h-13 bg-white">
+                  <select
+                    required
+                    className="w-1/3 border p-3 h-13 bg-white"
+                    value={hour}
+                    onChange={(e) => setHour(e.target.value)}
+                    tabIndex={10}
+                  >
                     <option value="">Hour</option>
-                    {[...Array(12)].map((_, i) => (<option key={i} value={i + 1}>{i + 1}</option>))}
+                    {[...Array(12)].map((_, i) => (
+                      <option key={i} value={i + 1}>{i + 1}</option>
+                    ))}
                   </select>
-                  <select name="minute" required value={minute} onChange={(e) => setMinute(e.target.value)} className="w-1/3 border p-3 h-13 bg-white">
+
+                  <select
+                    required
+                    className="w-1/3 border p-3 h-13 bg-white"
+                    value={minute}
+                    onChange={(e) => setMinute(e.target.value)}
+                    tabIndex={12}
+                  >
                     <option value="">Minute</option>
                     {[...Array(60)].map((_, i) => {
                       const val = i < 10 ? `0${i}` : `${i}`;
                       return <option key={i} value={val}>{val}</option>;
                     })}
                   </select>
-                  <select name="period" required value={period} onChange={(e) => setPeriod(e.target.value)} className="w-1/3 border p-3 h-13 bg-white">
+
+                  <select
+                    required
+                    className="w-1/3 border p-3 h-13 bg-white"
+                    value={period}
+                    onChange={(e) => setPeriod(e.target.value)}
+                    tabIndex={13}
+                  >
                     <option value="">AM/PM</option>
                     <option>AM</option>
                     <option>PM</option>
@@ -194,7 +290,12 @@ export default function BookingPage() {
           </div>
 
           <div className="mt-10 text-center">
-            <button type="submit" disabled={state.submitting} className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition cursor-pointer">
+            <button
+              type="submit"
+              className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition cursor-pointer"
+              disabled={state.submitting}
+              tabIndex={14}
+            >
               Submit
             </button>
           </div>
