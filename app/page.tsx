@@ -9,8 +9,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 max-w-3xl">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
-            Hen Party <br />
-            Life Drawing Class
+            The First & Only 
+            <br></br>Hen Party Life Drawing Class
+            <br></br>in Hong Kong
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-white">
             Celebrate your Hen Party in style – sip, sketch & laugh the night away
