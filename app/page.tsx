@@ -7,28 +7,30 @@ export default function Home() {
         style={{ backgroundImage: 'url(/images/hero.jpg)' }} id="hero"
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 max-w-3xl">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
-            The First & Only 
+        <div className="relative z-10 max-w-4l w-full lg:pl-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:text-left font-bold mb-4 text-white">
+            The First and Only 
             <br></br>Hen Party Life Drawing Class
             <br></br>in Hong Kong
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-white">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 lg:text-left text-white">
             Celebrate your Hen Party in style – sip, sketch & laugh the night away
           </p>
-          <a
-            href="#idea"
-            className="px-6 py-2 sm:px-10 sm:py-3 text-white border border-white hover:text-black hover:border-black transition"
-          >
-            Get Started
-          </a>
+          <div className="flex justify-center lg:justify-start">
+            <a
+              href="#idea"
+              className="px-6 py-2 sm:px-10 sm:py-3 text-white border border-white hover:text-black hover:border-black transition"
+            >
+              Get Started
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Idea Section */}
       <section 
         id="idea"
-        className="bg-cover bg-center bg-no-repeat px-6 py-20 min-h-screen flex flex-col justify-center items-center text-center relative"
+        className="bg-cover bg-center bg-no-repeat px-6 py-20 min-h-screen flex flex-col justify-center items-center text-center lg:text-left lg:pr-150 relative"
         style={{ backgroundImage: 'url(/images/idea.png)' }}
       >
         <div className="relative z-10 text-[#6f1c0b] max-w-2xl">
