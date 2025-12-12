@@ -4,70 +4,160 @@ import Footer from "./components/Footer";
 import Script from "next/script";
 import { Playfair_Display } from "next/font/google";
 
-const playfairDisplay = Playfair_Display({ 
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-playfair-display"
+  variable: "--font-playfair-display",
 });
 
 export const metadata = {
-  title: "Cheeky Hen Party | Life Drawing Experience in Hong Kong",
-  description: "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
+  title: "Cheeky Hen Party – Life Drawing Hong Kong",
+  description:
+    "Fun, cheeky, and classy Hen Party Life Drawing experiences in Hong Kong. Sip, sketch, laugh, and celebrate with Hong Kong's first and only Hen Party Life Drawing service.",
   keywords: [
-    "Hen party Hong Kong",
-    "Life drawing class Hong Kong",
-    "Cheeky Hen Party",
-    "Bachelorette party Hong Kong",
-    "Hen night ideas Hong Kong",
-    "Private party Hong Kong",
-    "Life drawing Hong Kong",
-    "Girls night Hong Kong",
-    "Topless Butler Hong Kong"
+    "hen party hong kong",
+    "hen party ideas hk",
+    "life drawing hong kong",
+    "bachelorette party hong kong",
+    "hen night hk",
+    "hen do hong kong",
+    "paint and sip hong kong",
+    "hen party entertainment hk",
+    "private party ideas hk",
+    "hen party life drawing",
+    "cheeky hen party hk",
+    "male model life drawing hk",
   ],
+  alternates: {
+    canonical: "https://cheekyhenparty.com",
+  },
   openGraph: {
-    title: "Cheeky Hen Party",
-    description: "FThe first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
-    url: "https://www.cheekyhenparty.com",
-    type: "website",
+    title: "Cheeky Hen Party – Life Drawing Hong Kong",
+    description:
+      "Hong Kong's first and only Hen Party Life Drawing experience. Fun, cheeky, creative celebrations with professional male models.",
+    url: "https://cheekyhenparty.com",
+    siteName: "Cheeky Hen Party",
     images: [
       {
-        url: "https://www.cheekyhenparty.com/images/hero.jpg",
+        url: "/images/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Cheeky Hen Party Life Drawing"
-      }
-    ]
+        alt: "Hen Party Life Drawing in Hong Kong",
+      },
+    ],
+    locale: "en_HK",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cheeky Hen Party",
-    description: "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
-    images: ["https://www.cheekyhenparty.com/images/hero.jpg"]
-  }
+    title: "Cheeky Hen Party – Life Drawing Hong Kong",
+    description:
+      "Sip, sketch, and laugh with Hong Kong's cheekiest Hen Party Life Drawing experience!",
+    images: ["/images/hero.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={playfairDisplay.variable}>
       <head>
-        {/* SEO Meta */}
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords.join(", ")} />
-        <meta name="robots" content="index, follow" />
+        {/* Structured Data: Event */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              name: "Cheeky Hen Party Life Drawing",
+              description:
+                "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
+              eventStatus: "https://schema.org/EventScheduled",
+              eventAttendanceMode:
+                "https://schema.org/OfflineEventAttendanceMode",
+              url: "https://cheekyhenparty.com",
+              location: {
+                "@type": "Place",
+                name: "Private indoor venues in Hong Kong",
+              },
+              startDate: "2026-01-01T20:00",
+              endDate: "2026-12-31T23:00",
+              organizer: {
+                "@type": "Organization",
+                name: "Cheeky Hen Party",
+                url: "https://cheekyhenparty.com",
+              },
+              offers: {
+                "@type": "Offer",
+                url: "https://cheekyhenparty.com/booking",
+                price: "300",
+                priceCurrency: "HKD",
+                availability: "https://schema.org/InStock",
+                validFrom: "2025-12-01",
+              },
+            }),
+          }}
+        />
 
-        {/* Open Graph */}
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta property="og:description" content={metadata.openGraph.description} />
-        <meta property="og:type" content={metadata.openGraph.type} />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta property="og:image:alt" content={metadata.openGraph.images[0].alt} />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content={metadata.twitter.card} />
-        <meta name="twitter:title" content={metadata.twitter.title} />
-        <meta name="twitter:description" content={metadata.twitter.description} />
-        <meta name="twitter:image" content={metadata.twitter.images[0]} />
+        {/* Structured Data: FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "How much is the Life Drawing class package?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Hen Party packages start from $300 per person, with a minimum booking fee of $3,000.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How long does the Life Drawing class run for?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Life Drawing class runs for 2 hours.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What to expect in a Life Drawing Class?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "A Hen Party Life Drawing Class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How can we book a Hen Party package?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Fill in our Booking Request Form with your party details. A $1,500 deposit is required to secure your event; remaining amount due one week prior.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Where can we host the class?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Private indoor spaces like hotel suites, function rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host in our art studio.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Why should you book a Life Drawing Class for a Hen Party?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "It's hilarious and memorable, everyone can join in, it's flirty but classy, and you walk away with unique drawings and memories.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
 
       <body>
@@ -95,82 +185,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-
-        {/* Structured Data */}
-<Script
-  id="structured-data"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://cheekyhenparty.com/#business",
-      "name": "Cheeky Hen Party Hong Kong",
-      "description": "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
-      "url": "https://cheekyhenparty.com",
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Hong Kong"
-      },
-      "serviceArea": {
-        "@type": "AdministrativeArea",
-        "name": "Hong Kong"
-      },
-      "image": "https://cheekyhenparty.com/social-preview.jpg",
-      "sameAs": [
-        "https://www.instagram.com/cheekyhenpartyhk"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "HKD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://cheekyhenparty.com"
-      }
-    })
-  }}
-/>
-
-<Script
-  id="event-schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Cheeky Hen Party Life Drawing",
-      "description": "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "startDate": "2024-01-01",
-      "endDate": "2025-12-31",
-      "location": {
-        "@type": "Place",
-        "name": "Hong Kong Indoor Venues",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Hong Kong",
-          "addressRegion": "HK"
-        }
-      },
-      "image": [
-        "https://cheekyhenparty.com/social-preview.jpg"
-      ],
-      "url": "https://cheekyhenparty.com",
-      "performer": {
-        "@type": "Person",
-        "name": "Professional Male Model"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "1800",
-        "priceCurrency": "HKD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://cheekyhenparty.com"
-      }
-    })
-  }}
-/>
-
 
         <Navbar />
         <main className="min-h-screen">{children}</main>
