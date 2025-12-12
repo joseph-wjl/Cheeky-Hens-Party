@@ -11,7 +11,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Cheeky Hen Party",
+  title: "Cheeky Hen Party | Life Drawing Experience in Hong Kong",
   description: "The first and only hen party life drawing experiences in Hong Kong with hunky professional male models.",
   keywords: [
     "Hen party Hong Kong",
