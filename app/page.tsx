@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Idea Section */}
+      {/* Idea Section
       <section 
         id="idea"
         className="bg-cover bg-center bg-no-repeat px-6 py-20 min-h-screen flex flex-col justify-center items-center text-center lg:text-left lg:pr-150 relative"
@@ -40,7 +40,33 @@ export default function Home() {
           <p>Let us take care of your Hen Party entertainment with our popular Life Drawing Class!</p>
           <p>Create an unforgettable hen night for the Bride-To-Be and friends.</p>
         </div>
-      </section>
+      </section> */}
+
+      {/* Idea Section */}
+        <section
+          id="idea"
+          className="relative bg-cover bg-center bg-no-repeat px-6 py-16 sm:py-20 lg:min-h-screen flex items-center"
+          style={{ backgroundImage: "url(/images/idea.png)" }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-[#FCCFC5]/70 lg:bg-transparent" />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-xl mx-auto lg:mx-0 lg:ml-24 text-center lg:text-left text-[#6f1c0b] bg-white/70 lg:bg-transparent p-6 sm:p-8 rounded-2xl lg:rounded-none">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              Looking for a fun Hen Party idea?
+            </h2>
+
+            <p className="mb-2">
+              Let us take care of your Hen Party entertainment with our popular Life Drawing Class!
+            </p>
+
+            <p>
+              Create an unforgettable hen night for the Bride-To-Be and friends.
+            </p>
+          </div>
+        </section>
+
 
       {/* Process Section */}
       <section
@@ -110,7 +136,7 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl mb-8 text-[#6f1c0b]">What our customers say</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-start py-8">
             {[
-              { name: 'Alex', text: 'This was bloody amazing! We did this for my sister\'s Hen Party on the Gold Coast. Thank you so much! An hour of belly laughs.' },
+              { name: 'Alex', text: 'This was bloody amazing! We did this for my sister\'s Hen Party in Hong Kong. Thank you so much! An hour of belly laughs.' },
               { name: 'Cassie', text: 'This was my second time booking Foxy Hen Life Drawing for a hen party. Our facilitator did different art activities that had us all in stitches.' },
               { name: 'Dalilah', text: 'Perfect hen party idea! Everyone had so much fun and made great memories with our bride.' }
             ].map((review, i) => (
