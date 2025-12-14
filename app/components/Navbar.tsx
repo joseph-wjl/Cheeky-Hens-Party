@@ -1,28 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [packagesOpen, setPackagesOpen] = useState(false);
 
   return (
     <>
+      {/* ================= DESKTOP NAV ================= */}
       <nav className="sticky top-0 z-50 w-full bg-[#FCCFC5] shadow">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-          {/* Logo */}
           <Link href="/" className="text-xl font-bold text-[#6f1c0b]">
             Cheeky Hen
           </Link>
 
-          {/* Desktop Menu */}
           <ul className="hidden md:flex gap-12 text-lg text-[#6f1c0b] items-center">
             <li><Link href="/">Home</Link></li>
 
-            {/* Packages Dropdown */}
             <li className="relative group cursor-pointer">
               <span>Packages</span>
               <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
@@ -44,7 +42,6 @@ export default function Navbar() {
             <li><Link href="/contact">Contact</Link></li>
           </ul>
 
-          {/* Hamburger */}
           <button
             className="md:hidden text-[#6f1c0b]"
             onClick={() => setMenuOpen(true)}
@@ -65,7 +62,10 @@ export default function Navbar() {
               Cheeky Hen
             </span>
             <button
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                setPackagesOpen(false);
+              }}
               aria-label="Close Menu"
               className="text-[#6f1c0b]"
             >
@@ -73,27 +73,50 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Menu Links */}
+          {/* Menu */}
           <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] text-[#6f1c0b] text-2xl space-y-6">
 
             <Link href="/" onClick={() => setMenuOpen(false)}>
               Home
             </Link>
 
-            <div className="text-center">
-              <p className="font-semibold mb-3">Packages</p>
-              <div className="space-y-2 text-xl">
-                <Link href="/packages/classic-life-drawing" onClick={() => setMenuOpen(false)}>
+            {/* Packages Toggle */}
+            <button
+              onClick={() => setPackagesOpen(!packagesOpen)}
+              className="flex items-center gap-2 font-semibold"
+            >
+              Packages
+              <ChevronDown
+                size={22}
+                className={`transition-transform ${
+                  packagesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* Packages Links */}
+            {packagesOpen && (
+              <div className="flex flex-col items-center space-y-3 text-xl">
+                <Link
+                  href="/packages/classic-life-drawing"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Classic Life Drawing
                 </Link>
-                <Link href="/packages/cheeky-butler" onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/packages/cheeky-butler"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Cheeky Butler
                 </Link>
-                <Link href="/packages/nude-paint-sip" onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/packages/nude-paint-sip"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Nude Paint & Sip
                 </Link>
               </div>
-            </div>
+            )}
 
             <Link href="/gallery" onClick={() => setMenuOpen(false)}>
               Gallery
@@ -113,6 +136,7 @@ export default function Navbar() {
     </>
   );
 }
+
 
 
 // 'use client';
