@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           <Link href="/" className="text-xl font-bold text-[#6f1c0b]">
-            Cheeky Hen
+            CHEEKY HEN PARTY.
           </Link>
 
           <ul className="hidden md:flex gap-12 text-lg text-[#6f1c0b] items-center">
@@ -59,7 +59,7 @@ export default function Navbar() {
           {/* Top bar */}
           <div className="flex items-center justify-between px-6 py-4">
             <span className="text-xl font-bold text-[#6f1c0b]">
-              Cheeky Hen
+              CHEEKY HEN PARTY.
             </span>
             <button
               onClick={() => {
