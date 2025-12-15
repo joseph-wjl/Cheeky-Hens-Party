@@ -1,17 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import { useForm } from "@formspree/react";
 
 export default function BookingPage() {
   const [hour, setHour] = useState("");
   const [minute, setMinute] = useState("");
   const [period, setPeriod] = useState("");
 
-  // Formspree setup
   const [state, handleSubmitSpree] = useForm("myzrbzgk");
 
-  // phone formatter
   const formatPhone = (e: React.FormEvent<HTMLInputElement>) => {
     let v = e.currentTarget.value.replace(/\D/g, "").slice(0, 8);
     if (v.length > 4) {
@@ -23,31 +21,13 @@ export default function BookingPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-
-    const firstName = formData.get("firstName") || "";
-    const lastName = formData.get("lastName") || "";
-    const email = formData.get("email") || "";
-    const phone = formData.get("phone") || "";
-    const location = formData.get("location") || "";
-    const instructor = formData.get("instructor") || "";
-    const eventType = formData.get("eventType") || "";
-    const duration = formData.get("duration") || "";
-    const date = formData.get("date") || "";
-    const message = formData.get("message") || "";
-
-    const selectedTime = `${hour}:${minute} ${period}`;
-
-    // GA4 tracking
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "booking_submission", {
         event_category: "Booking",
-        event_label: `Event Type: ${eventType}, Location: ${location}, Time: ${selectedTime}`,
         value: 1,
       });
     }
 
-    // Submit to Formspree
     handleSubmitSpree(e);
   };
 
@@ -64,237 +44,208 @@ export default function BookingPage() {
 
   return (
     <>
+      {/* HEADER */}
       <div className="px-6 py-20 bg-[#FEEFEC] text-center text-[#82310e]">
-        <h1 className="text-5xl sm:text-6xl font-bold mb-10">Booking Request Form</h1>
+        <h1 className="text-5xl sm:text-6xl font-bold mb-10">
+          Booking Request Form
+        </h1>
         <h2 className="text-xl sm:text-2xl mb-8">
           Let's Create Something Beautiful (and a little cheeky!)
         </h2>
         <p className="mb-5">
-          Use the form below to check availability, request a quote or any other
-          questions you may have on our Hen Party Packages.
+          Use the form below to check availability, request a quote or ask any
+          questions about our Hen Party Packages.
         </p>
         <p>
-          Our team is more than happy to help and will get back to you within 24
-          hours with all your answers.
+          Our team will get back to you within 24 hours.
         </p>
       </div>
 
+      {/* FORM */}
       <div className="px-6 py-20 flex justify-center bg-[#FCCFC5]">
         <form
-          className="p-10 max-w-5xl mx-auto w-full"
           onSubmit={handleSubmit}
+          className="p-10 max-w-5xl w-full"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* LEFT COLUMN */}
-            <div className="flex flex-col gap-6">
-              <div>
-                <label className="block mb-1">First Name</label>
-                <input
-                  name="firstName"
-                  type="text"
-                  required
-                  pattern="[A-Za-z ]+"
-                  className="w-full border p-3 bg-white"
-                  tabIndex={1}
-                />
-              </div>
+          {/* 🔑 SINGLE PARENT LAYOUT */}
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
+            {/* 1. First Name */}
+            <div className="order-1">
+              <label className="block mb-1">First Name</label>
+              <input
+                name="firstName"
+                type="text"
+                required
+                className="w-full border p-3 bg-white"
+              />
+            </div>
 
-              <div>
-                <label className="block mb-1">Email</label>
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full border p-3 bg-white"
-                  tabIndex={3}
-                />
-              </div>
+            {/* 2. Last Name */}
+            <div className="order-2">
+              <label className="block mb-1">Last Name</label>
+              <input
+                name="lastName"
+                type="text"
+                required
+                className="w-full border p-3 bg-white"
+              />
+            </div>
 
-              <div>
-                <label className="block mb-1">Event Location</label>
+            {/* 3. Email */}
+            <div className="order-3">
+              <label className="block mb-1">Email</label>
+              <input
+                name="email"
+                type="email"
+                required
+                className="w-full border p-3 bg-white"
+              />
+            </div>
+
+            {/* 4. Phone */}
+            <div className="order-4">
+              <label className="block mb-1">Phone</label>
+              <input
+                name="phone"
+                type="text"
+                required
+                maxLength={9}
+                onInput={formatPhone}
+                className="w-full border p-3 bg-white"
+              />
+            </div>
+
+            {/* 5. Event Type */}
+            <div className="order-5">
+              <label className="block mb-1">Event Type</label>
+              <select
+                name="eventType"
+                required
+                className="w-full border p-3 bg-white"
+              >
+                <option value="">Select Event Type</option>
+                <option>Classic Life Drawing</option>
+                <option>Cheeky Butler</option>
+                <option>Nude Paint & Sip</option>
+              </select>
+            </div>
+
+            {/* 6. Event Location */}
+            <div className="order-6">
+              <label className="block mb-1">Event Location</label>
+              <select
+                name="location"
+                required
+                className="w-full border p-3 bg-white"
+              >
+                <option value="">Select Location</option>
+                <option>Hong Kong Island</option>
+                <option>Kowloon</option>
+                <option>New Territories</option>
+                <option>To Kwa Wan (Studio)</option>
+              </select>
+            </div>
+
+            {/* 7. Duration */}
+            <div className="order-7">
+              <label className="block mb-1">Event Duration</label>
+              <select
+                name="duration"
+                required
+                className="w-full border p-3 bg-white"
+              >
+                <option value="">Select Duration</option>
+                <option>2 hours</option>
+                <option>2.5 hours</option>
+                <option>3 hours</option>
+              </select>
+            </div>
+
+            {/* 8. Date */}
+            <div className="order-8">
+              <label className="block mb-1">Event Date</label>
+              <input
+                name="date"
+                type="date"
+                required
+                className="w-full border p-3 bg-white"
+              />
+            </div>
+
+            {/* 9. Time */}
+            <div className="order-9">
+              <label className="block mb-1">Event Time</label>
+              <div className="flex gap-2">
                 <select
-                  name="location"
                   required
-                  className="w-full border p-3 h-13 bg-white"
-                  tabIndex={5}
+                  className="w-1/3 border p-3 bg-white"
+                  value={hour}
+                  onChange={(e) => setHour(e.target.value)}
                 >
-                  <option value="">Select Event Location</option>
-                  <optgroup label="Hong Kong Island">
-                    <option>Central & Western</option>
-                    <option>Eastern</option>
-                    <option>Southern</option>
-                    <option>Wan Chai</option>
-                  </optgroup>
-                  <optgroup label="Kowloon">
-                    <option>Kowloon City</option>
-                    <option>Kwun Tong</option>
-                    <option>Sham Shui Po</option>
-                    <option>Wong Tai Sin</option>
-                    <option>Yau Tsim Mong</option>
-                  </optgroup>
-                  <optgroup label="New Territories">
-                    <option>Tsuen Wan</option>
-                    <option>Tuen Mun</option>
-                    <option>Yuen Long</option>
-                    <option>Kwai Tsing</option>
-                    <option>North</option>
-                    <option>Sai Kung</option>
-                    <option>Sha Tin</option>
-                    <option>Tai Po</option>
-                    <option>Islands</option>
-                  </optgroup>
-                  <optgroup label="Our Studio Location">
-                    <option>To Kwa Wan</option>
-                  </optgroup>
+                  <option value="">Hour</option>
+                  {[...Array(12)].map((_, i) => (
+                    <option key={i} value={i + 1}>{i + 1}</option>
+                  ))}
                 </select>
-              </div>
 
-              <div>
-                <label className="block mb-1">Art Instructor Needed?</label>
                 <select
-                  name="instructor"
                   required
-                  className="w-full border p-3 h-13 bg-white"
-                  tabIndex={7}
+                  className="w-1/3 border p-3 bg-white"
+                  value={minute}
+                  onChange={(e) => setMinute(e.target.value)}
                 >
-                  <option value="">Select Option</option>
-                  <option>No</option>
-                  <option>Yes (+$700)</option>
+                  <option value="">Minute</option>
+                  {[...Array(60)].map((_, i) => {
+                    const v = i < 10 ? `0${i}` : `${i}`;
+                    return <option key={i}>{v}</option>;
+                  })}
                 </select>
-              </div>
 
-              <div>
-                <label className="block mb-1">Message</label>
-                <textarea
-                  name="message"
+                <select
                   required
-                  rows={6}
-                  className="w-full border p-3 resize-none bg-white"
-                  tabIndex={11}
-                />
+                  className="w-1/3 border p-3 bg-white"
+                  value={period}
+                  onChange={(e) => setPeriod(e.target.value)}
+                >
+                  <option value="">AM/PM</option>
+                  <option>AM</option>
+                  <option>PM</option>
+                </select>
               </div>
             </div>
 
-            {/* RIGHT COLUMN */}
-            <div className="flex flex-col gap-6">
-              <div>
-                <label className="block mb-1">Last Name</label>
-                <input
-                  name="lastName"
-                  type="text"
-                  required
-                  pattern="[A-Za-z ]+"
-                  className="w-full border p-3 bg-white"
-                  tabIndex={2}
-                />
-              </div>
+            {/* 10. Instructor */}
+            <div className="order-10">
+              <label className="block mb-1">Art Instructor Needed?</label>
+              <select
+                name="instructor"
+                required
+                className="w-full border p-3 bg-white"
+              >
+                <option value="">Select Option</option>
+                <option>No</option>
+                <option>Yes (+$700)</option>
+              </select>
+            </div>
 
-              <div>
-                <label className="block mb-1">Phone</label>
-                <input
-                  name="phone"
-                  type="text"
-                  required
-                  maxLength={9}
-                  onInput={(e) => formatPhone(e)}
-                  className="w-full border p-3 bg-white"
-                  tabIndex={4}
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">Event Type</label>
-                <select
-                  name="eventType"
-                  required
-                  className="w-full border p-3 h-13 bg-white"
-                  tabIndex={6}
-                >
-                  <option value="">Select Event Type</option>
-                  <option>Classic Life Drawing</option>
-                  <option>Cheeky Butler</option>
-                  <option>Nude Paint & Sip</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block mb-1">Event Duration</label>
-                <select
-                  name="duration"
-                  required
-                  className="w-full border p-3 h-13 bg-white"
-                  tabIndex={8}
-                >
-                  <option value="">Select Duration</option>
-                  <option>2 hours</option>
-                  <option>2.5 hours</option>
-                  <option>3 hours</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block mb-1">Event Date</label>
-                <input
-                  name="date"
-                  type="date"
-                  required
-                  className="w-full border p-3 bg-white"
-                  tabIndex={9}
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">Event Time</label>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <select
-                    required
-                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
-                    value={hour}
-                    onChange={(e) => setHour(e.target.value)}
-                    tabIndex={10}
-                  >
-                    <option value="">Hour</option>
-                    {[...Array(12)].map((_, i) => (
-                      <option key={i} value={i + 1}>{i + 1}</option>
-                    ))}
-                  </select>
-
-                  <select
-                    required
-                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
-                    value={minute}
-                    onChange={(e) => setMinute(e.target.value)}
-                    tabIndex={12}
-                  >
-                    <option value="">Minute</option>
-                    {[...Array(60)].map((_, i) => {
-                      const val = i < 10 ? `0${i}` : `${i}`;
-                      return <option key={i} value={val}>{val}</option>;
-                    })}
-                  </select>
-
-                  <select
-                    required
-                    className="w-full sm:w-1/3 border p-3 h-13 bg-white"
-                    value={period}
-                    onChange={(e) => setPeriod(e.target.value)}
-                    tabIndex={13}
-                  >
-                    <option value="">AM/PM</option>
-                    <option>AM</option>
-                    <option>PM</option>
-                  </select>
-                </div>
-              </div>
+            {/* 11. Message */}
+            <div className="order-11 md:col-span-2">
+              <label className="block mb-1">Message</label>
+              <textarea
+                name="message"
+                rows={6}
+                required
+                className="w-full border p-3 resize-none bg-white"
+              />
             </div>
           </div>
 
+          {/* SUBMIT */}
           <div className="mt-10 text-center">
             <button
               type="submit"
-              className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition cursor-pointer"
               disabled={state.submitting}
-              tabIndex={14}
+              className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition"
             >
               Submit
             </button>
