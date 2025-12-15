@@ -13,20 +13,20 @@ const playfairDisplay = Playfair_Display({
 export const metadata = {
   title: "Cheeky Hen Party – Life Drawing Hong Kong",
   description:
-    "Fun, cheeky, and classy Hen Party Life Drawing experiences in Hong Kong. Sip, sketch, laugh, and celebrate with Hong Kong's first and only Hen Party Life Drawing service.",
+    "Hong Kong's first and only hen party life drawing experience with hunky nude male models. Sip, sketch, and laugh the night away!",
   keywords: [
     "hen party hong kong",
-    "hen party ideas hk",
+    "hen party ideas hong kong",
     "life drawing hong kong",
     "bachelorette party hong kong",
-    "hen night hk",
+    "hen night hong kong",
     "hen do hong kong",
     "paint and sip hong kong",
-    "hen party entertainment hk",
+    "hen party entertainment hong kong",
     "private party ideas hk",
-    "hen party life drawing",
-    "cheeky hen party hk",
-    "male model life drawing hk",
+    "hen party life drawing hong kong",
+    "hunky male models hong kong",
+    "strippers hong kong",
   ],
   alternates: {
     canonical: "https://cheekyhenparty.com",
@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     title: "Cheeky Hen Party – Life Drawing Hong Kong",
     description:
-      "Hong Kong's first and only Hen Party Life Drawing experience. Fun, cheeky, creative celebrations with professional male models.",
+      "Hong Kong's first and only hen party life drawing experience with hunky male models. Sip, sketch, and laugh the night away!",
     url: "https://cheekyhenparty.com",
     siteName: "Cheeky Hen Party",
     images: [
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "Event",
               name: "Cheeky Hen Party Life Drawing",
               description:
-                "Fun hen party life drawing experiences in Hong Kong with cheeky, professional male models.",
+                "Fun hen party life drawing experiences in Hong Kong with hunky, professional male models.",
               eventStatus: "https://schema.org/EventScheduled",
               eventAttendanceMode:
                 "https://schema.org/OfflineEventAttendanceMode",
