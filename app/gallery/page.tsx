@@ -88,7 +88,7 @@ export default function Gallery() {
             <button
               key={i}
               onClick={() => open(i)}
-              className="relative aspect-square overflow-hidden rounded-lg"
+              className="relative aspect-square overflow-hidden"
             >
               <Image
                 src={img.src}
