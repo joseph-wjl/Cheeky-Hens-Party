@@ -135,7 +135,7 @@ export default function GalleryPage() {
             </button>
 
             {/* Image with animation */}
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden">
               <div key={currentIndex} className="animate-slide">
                 <Image
                   src={images[currentIndex].src}
