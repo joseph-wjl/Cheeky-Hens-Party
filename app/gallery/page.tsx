@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/images/gallery/1.jpg",
+    src: "/images/gallery/gallery1.png",
     caption: "Cheeky hens night life drawing session",
   },
   {
-    src: "/images/gallery/2.jpg",
+    src: "/images/gallery/gallery2.png",
     caption: "Private hen party with live male model",
   },
   {
