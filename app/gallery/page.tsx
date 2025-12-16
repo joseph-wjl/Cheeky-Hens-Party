@@ -99,7 +99,7 @@ export default function GalleryPage() {
             <button
               key={i}
               onClick={() => open(i)}
-              className="relative aspect-square overflow-hidden rounded-lg focus:outline-none"
+              className="relative aspect-square overflow-hidden focus:outline-none"
             >
               <Image
                 src={img.src}
