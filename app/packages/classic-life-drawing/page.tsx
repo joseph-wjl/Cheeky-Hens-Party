@@ -81,7 +81,7 @@ export default function ClassicLifeDrawing() {
           </div>
 
           <div className="ml-0 sm:ml-0">
-            <img src="/images/classic-life-drawing/package.png" alt="Classic Life Drawing Package" className="w-full h-full object-cover rounded-lg" />
+            <img src="/images/classic-life-drawing/package.png" alt="Classic Life Drawing Package" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
