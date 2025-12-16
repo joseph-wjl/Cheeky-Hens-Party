@@ -137,13 +137,13 @@ export default function Contact() {
             </button>
           </div>
 
-          {/* CONTACT INFO */}
+          {/* CONTACT INFO
           <div className="mt-16 text-center text-[#82310e]">
             <h3 className="text-2xl font-bold mb-4">Other Ways to Reach Us</h3>
             <p className="mb-2">📧 cheekyhenparty@gmail.com</p>
             <p className="mb-2">📞 +852 5785-6409</p>
             <p>📍 Hong Kong</p>
-          </div>
+          </div> */}
         </form>
       </div>
     </>
