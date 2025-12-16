@@ -3,7 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const images = [
+type GalleryImage = {
+  src: string;
+  caption: string;
+};
+
+const images: GalleryImage[] = [
   {
     src: "/images/gallery/gallery1.png",
     caption: "Cheeky hens night life drawing session",
@@ -30,25 +35,30 @@ const images = [
   },
 ];
 
-export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(null);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+export default function GalleryPage() {
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const open = (index) => setCurrentIndex(index);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  const open = (index: number) => setCurrentIndex(index);
   const close = () => setCurrentIndex(null);
 
   const prev = () =>
-    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+    setCurrentIndex((i) =>
+      i === null ? 0 : i === 0 ? images.length - 1 : i - 1
+    );
 
   const next = () =>
-    setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+    setCurrentIndex((i) =>
+      i === null ? 0 : i === images.length - 1 ? 0 : i + 1
+    );
 
   /* Keyboard controls */
   useEffect(() => {
     if (currentIndex === null) return;
 
-    const handleKey = (e) => {
+    const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
@@ -59,11 +69,11 @@ export default function Gallery() {
   }, [currentIndex]);
 
   /* Swipe gestures */
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     touchEndX.current = e.touches[0].clientX;
   };
 
@@ -81,20 +91,20 @@ export default function Gallery() {
         <p>Click any image to explore our cheeky hen party moments.</p>
       </div>
 
-      {/* Grid */}
+      {/* Gallery Grid */}
       <section className="px-6 py-20 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, i) => (
             <button
               key={i}
               onClick={() => open(i)}
-              className="relative aspect-square overflow-hidden"
+              className="relative aspect-square overflow-hidden rounded-lg focus:outline-none"
             >
               <Image
                 src={img.src}
                 alt={img.caption}
                 fill
-                className="object-cover hover:scale-105 transition"
+                className="object-cover hover:scale-105 transition-transform duration-300"
               />
             </button>
           ))}
@@ -108,45 +118,66 @@ export default function Gallery() {
           onClick={close}
         >
           <div
-            className="relative max-w-5xl w-full text-center"
+            className="relative w-full max-w-5xl mx-auto text-center px-12 group"
             onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Close */}
+            {/* Close button */}
             <button
               onClick={close}
-              className="absolute -top-12 right-0 text-white text-4xl"
+              className="absolute top-4 right-4 text-white text-4xl z-20 opacity-80 hover:opacity-100 transition"
+              aria-label="Close gallery"
             >
               &times;
             </button>
 
-            {/* Image */}
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].caption}
-              width={1600}
-              height={1000}
-              className="w-full h-auto rounded-lg"
-            />
+            {/* Image with animation */}
+            <div className="overflow-hidden rounded-lg">
+              <div key={currentIndex} className="animate-slide">
+                <Image
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].caption}
+                  width={1600}
+                  height={1000}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            </div>
 
             {/* Caption */}
             <p className="mt-4 text-white text-lg">
               {images[currentIndex].caption}
             </p>
 
-            {/* Arrows */}
+            {/* Left arrow (desktop only) */}
             <button
               onClick={prev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-5xl px-4"
+              className="
+                absolute left-2 sm:left-6 top-1/2 -translate-y-1/2
+                text-white text-5xl z-10
+                opacity-0 group-hover:opacity-100
+                transition-opacity duration-300
+                hidden sm:block
+              "
+              aria-label="Previous image"
             >
               ‹
             </button>
 
+            {/* Right arrow (desktop only) */}
             <button
               onClick={next}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-5xl px-4"
+              className="
+                absolute right-2 sm:right-6 top-1/2 -translate-y-1/2
+                text-white text-5xl z-10
+                opacity-0 group-hover:opacity-100
+                transition-opacity duration-300
+                hidden sm:block
+              "
+              aria-label="Next image"
             >
               ›
             </button>
