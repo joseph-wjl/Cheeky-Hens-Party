@@ -10,7 +10,7 @@ type GalleryImage = {
 
 const images: GalleryImage[] = [
   {
-    src: "/images/gallery/gallery1.png",
+    src: "/images/gallery/gallery1.JPG",
     caption: "Cheeky hens night life drawing session",
   },
   {
@@ -18,7 +18,7 @@ const images: GalleryImage[] = [
     caption: "Private hen party with live male model",
   },
   {
-    src: "/images/gallery/3.jpg",
+    src: "/images/gallery/3.png",
     caption: "Laughs, prosecco, and art",
   },
   {
@@ -88,7 +88,8 @@ export default function GalleryPage() {
       {/* Header */}
       <div className="px-6 py-20 bg-[#FEEFEC] text-center text-[#82310e]">
         <h1 className="text-5xl sm:text-6xl font-bold mb-10">Gallery</h1>
-        <p>Click any image to explore our cheeky hen party moments.</p>
+        <p className="mb-5">Click any image to explore our cheeky hen party moments.</p>
+        <p> Follow us on Facebook or Instagram to keep up with all our fun and sexy art classes and check out our hot talent. </p>
       </div>
 
       {/* Gallery Grid */}
