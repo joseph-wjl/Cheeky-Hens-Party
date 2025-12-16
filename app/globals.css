@@ -35,3 +35,18 @@ select {
   background-position: right 0.5rem center;
   padding-right: 2rem; /* space for arrow */
 }
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide {
+  animation: slide 0.35s ease-out;
+}
