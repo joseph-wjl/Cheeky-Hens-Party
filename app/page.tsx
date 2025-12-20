@@ -1,4 +1,46 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
 export default function Home() {
+
+const questions = [
+  {
+    q: "How much is the Life Drawing class package?",
+    a: "Hen Party packages start from $300 per person, with a minimum booking fee of $3,000.",
+  },
+  {
+    q: "How long does the Life Drawing class run for?",
+    a: "Life Drawing class runs for 2 hours.",
+  },
+  {
+    q: "What to expect in a Life Drawing Class?",
+    a: "A Hen Party Life Drawing Class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics.",
+  },
+  {
+    q: "How can we book a Hen Party package?",
+    a: "Fill in our Booking Request Form with your party details. A $1,500 deposit is required to secure your event; the remaining amount is due one week prior.",
+  },
+  {
+    q: "Where can we host the class?",
+    a: "Private indoor spaces like hotel suites, function rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host the class in our art studio.",
+  },
+  {
+    q: "Why should you book a Life Drawing Class for a Hen Party?",
+    a: `• It's hilarious and memorable! Nothing breaks the ice faster than sketching a male model while laughing with friends.
+• Everyone can join in! No artistic skills required.
+• A touch of naughty! Flirty enough to get the giggles going, but still classy.
+• Unique memories and masterpieces! Walk away with drawings, stories, and laughs.`,
+  },
+];
+
+const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -157,27 +199,49 @@ export default function Home() {
       </section>
 
       {/* Questions Section */}
+
       <section
-        id="questions"
-        className="text-center bg-[#FEEFEC] py-20 px-6"
-      >
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl pt-12 pb-8 text-[#6f1c0b]">Have questions? We've got the answers</h2>
-          {[
-            { q: "How much is the Life Drawing class package?", a: "Hen Party packages start from $300 per person, with a minimum booking fee of $3,000." },
-            { q: "How long does the Life Drawing class run for?", a: "Life Drawing class runs for 2 hours." },
-            { q: "What to expect in a Life Drawing Class?", a: "A Hen Party Life Drawing Class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics." },
-            { q: "How can we book a Hen Party package?", a: "Fill in our 'Booking Request Form' with your party details. A $1,500 deposit is required to secure your event; remaining amount due one week prior." },
-            { q: "Where can we host the class?", a: "Private indoor spaces like hotel suites, function rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host in our art studio." },
-            { q: "Why should you book a Life Drawing Class for a Hen Party?", a: "· It's hilarious and memorable! Nothing breaks the ice faster than sketching a male model while laughing with friends.\n· Everyone can join in! No artistic skills required.\n· A touch of naughty! Flirty enough to get the giggles going, but still classy.\n· Unique memories and masterpieces! Walk away with drawings, stories, and laughs." }
-          ].map((qa, i) => (
-            <div key={i} className="p-4 sm:p-6">
-              <h3 className="text-2xl pb-2">{qa.q}</h3>
-              <p className="whitespace-pre-line">{qa.a}</p>
+            id="questions"
+            className="text-center bg-[#FEEFEC] pb-10 px-6"
+          >
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl pt-12 pb-10 text-[#6f1c0b]">
+                Have questions? We've got the answers
+              </h2>
+
+              <div className="space-y-4 text-left">
+                {questions.map((qa, i) => (
+                  <div
+                    key={i}
+                    className="border-b border-[#e4b9ae] pb-4"
+                  >
+                    <button
+                      onClick={() => toggle(i)}
+                      className="w-full flex justify-between items-center text-left "
+                      
+                    >
+                      <h3 className="text-xl sm:text-2xl text-[#6f1c0b] font-bold">
+                        {qa.q}
+                      </h3>
+
+                      <ChevronDown
+                        className={`w-6 h-6 text-[#6f1c0b] transition-transform duration-300 ${
+                          openIndex === i ? "rotate-180" : ""
+                        }`}
+                      />
+
+                    </button>
+
+                    {openIndex === i && (
+                      <p className="mt-3 text-[#6f1c0b] whitespace-pre-line animate-fade">
+                        {qa.a}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
     </>
   );
 }
