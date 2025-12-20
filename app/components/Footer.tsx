@@ -30,7 +30,7 @@ export default function Footer() {
             Contact
             <ChevronDown
               size={18}
-              className={`transition ${open === "contact" ? "rotate-180" : ""}`}
+              className={`transition ${open === "contact" ? "rotate-180" : ""} transition-transform duration-500`}
             />
           </button>
           {open === "contact" && (

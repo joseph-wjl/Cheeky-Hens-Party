@@ -7,19 +7,19 @@ export default function Home() {
 
 const questions = [
   {
-    q: "How much is the Life Drawing class package?",
-    a: "Hen Party packages start from $300 per person, with a minimum booking fee of $3,000.",
+    q: "How much is the life drawing class package?",
+    a: "Hen party packages start from $300 per person, with a minimum booking fee of $3,000.",
   },
   {
-    q: "How long does the Life Drawing class run for?",
-    a: "Life Drawing class runs for 2 hours.",
+    q: "How long does the life drawing class run for?",
+    a: "Life drawing class runs for 2 hours.",
   },
   {
-    q: "What to expect in a Life Drawing Class?",
-    a: "A Hen Party Life Drawing Class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics.",
+    q: "What to expect in a life drawing class?",
+    a: "A Hen Party life drawing class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics.",
   },
   {
-    q: "How can we book a Hen Party package?",
+    q: "How can we book a hen party package?",
     a: "Fill in our Booking Request Form with your party details. A $1,500 deposit is required to secure your event; the remaining amount is due one week prior.",
   },
   {
@@ -27,7 +27,7 @@ const questions = [
     a: "Private indoor spaces like hotel suites, function rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host the class in our art studio.",
   },
   {
-    q: "Why should you book a Life Drawing Class for a Hen Party?",
+    q: "Why should you book a life drawing class for a hen party?",
     a: `• It's hilarious and memorable! Nothing breaks the ice faster than sketching a male model while laughing with friends.
 • Everyone can join in! No artistic skills required.
 • A touch of naughty! Flirty enough to get the giggles going, but still classy.
@@ -225,7 +225,7 @@ const toggle = (index: number) => {
                       </h3>
 
                       <ChevronDown
-                        className={`w-6 h-6 text-[#6f1c0b] transition-transform duration-300 ${
+                        className={`w-6 h-6 text-[#6f1c0b] transition-transform duration-500 ${
                           openIndex === i ? "rotate-180" : ""
                         }`}
                       />
