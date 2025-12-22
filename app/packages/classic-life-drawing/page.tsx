@@ -29,7 +29,7 @@ export default function ClassicLifeDrawing() {
       {/* Planning Section */}
       <section className="px-6 py-20 bg-[#FEEFEC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#82310e]">Planning a Hens Party?
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#82310e]">Planning a Hen Party?
               <br></br>You've just found the ultimate package</h2>
           <p className="text-base sm:text-lg mb-4">
             Treat your bride to our best selling Classic Life Drawing Class, a playful, classy experience where your crew sketches a professional (and very charming) life model with a bubbly host guiding the fun.
@@ -42,7 +42,7 @@ export default function ClassicLifeDrawing() {
             <li>Price: $300 per person (minimum 10 persons)</li>
             <li>Duration: 2 hours, sweet spot for max laughs and cute sketches</li>
             <li>Group Size: Small to supersized - invite the whole posse!​</li>
-            <li>Venue: Your place or ours. We have an art studio available in To Kwa Wan. Venue fee applies. Request a quote in our Booking Request Form.</li>
+            <li>Venue: Your place or ours. We have an art studio available in To Kwa Wan. Venue fee applies. Request a quote in our <a href="/booking" className="font-bold">Booking Request Form</a>.</li>
           </ul>
 
           <div className="mt-10">
@@ -76,7 +76,7 @@ export default function ClassicLifeDrawing() {
             <h3 className="font-bold pt-6 sm:pt-10 pb-3 sm:pb-5 text-lg sm:text-xl">Optional add-ons:</h3>
             <ul className="list-disc pl-6 space-y-3 sm:space-y-5 text-gray-700 text-sm sm:text-base">
               <li>Art instructor/party facilitator (+$700)</li>
-              <li>Request for the model to be dressed in character or to suit the theme of your Hens Party</li>
+              <li>Request for the model to be dressed in character or to suit the theme of your hen party</li>
             </ul>
           </div>
 
