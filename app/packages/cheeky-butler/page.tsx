@@ -14,7 +14,7 @@ export default function CheekyButler() {
           Butler Service
           </h2>
           <p className="text-2xl mb-12 text-white">
-            A touch of cheeky fun with professional entertainment
+            Because sometimes, the best accessory to a glass of bubbles... is a six-pack!
           </p>
 
           <a

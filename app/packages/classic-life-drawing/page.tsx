@@ -22,8 +22,8 @@ export default function ClassicLifeDrawing() {
         <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
-        <div className="relative z-10 max-w-md sm:max-w-none text-center sm:text-left sm:pr-50">
-          <h2 className="text-3xl sm:text-7xl font-bold mb-4 text-white">
+        <div className="relative z-10 max-w-md sm:max-w-none text-left sm:text-left sm:pr-50">
+          <h2 className="text-6xl sm:text-7xl font-bold mb-4 text-white">
             Classic Life Drawing
           </h2>
 
