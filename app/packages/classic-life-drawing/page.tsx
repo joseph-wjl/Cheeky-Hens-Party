@@ -75,7 +75,7 @@ export default function ClassicLifeDrawing() {
             </ul>
             <h3 className="font-bold pt-6 sm:pt-10 pb-3 sm:pb-5 text-lg sm:text-xl">Optional add-ons:</h3>
             <ul className="list-disc pl-6 space-y-3 sm:space-y-5 text-gray-700 text-sm sm:text-base">
-              <li>Friendly party host/facilitator (+$700)</li>
+              <li>Art instructor/party facilitator (+$700)</li>
               <li>Request for the model to be dressed in character or to suit the theme of your Hens Party</li>
             </ul>
           </div>
