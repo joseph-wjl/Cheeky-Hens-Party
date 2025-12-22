@@ -1,4 +1,5 @@
 import Image from "next/image";
+import GalleryLightbox from "./galleryLightbox";
 import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
 
@@ -8,13 +9,11 @@ type GalleryImage = {
 };
 
 async function getGalleryImages(): Promise<GalleryImage[]> {
-  const data = await client.fetch(`*[_type == "galleryImage"]{image, caption}`);
-  return data;
+  return await client.fetch(`*[_type == "galleryImage"]{image, caption}`);
 }
 
 export default async function GalleryPage() {
   const images = await getGalleryImages();
-  const currentIndex = null;
 
   return (
     <>
@@ -31,25 +30,10 @@ export default async function GalleryPage() {
       </div>
 
       {/* Gallery Grid */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className="relative aspect-square overflow-hidden focus:outline-none"
-            >
-              {img.image && (
-                <Image
-                  src={urlFor(img.image).url()}
-                  alt={img.caption || "Gallery image"}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                />
-              )}
-            </div>
-          ))}
-        </div>
+      <section className="px-6 py-20 bg-white max-w-6xl mx-auto">
+        <GalleryLightbox images={images} />
       </section>
+      
     </>
   );
 }
