@@ -94,7 +94,7 @@ const toggle = (index: number) => {
           <div className="absolute inset-0 bg-[#FCCFC5]/70 lg:bg-transparent" />
 
           {/* Content */}
-          <div className="relative z-10 max-w-xl mx-auto lg:mx-0 lg:ml-24 text-center lg:text-left text-[#6f1c0b] bg-white/70 lg:bg-transparent p-6 sm:p-8 rounded-2xl lg:rounded-none">
+          <div className="relative z-10 max-w-xl mx-auto lg:mx-0 lg:ml-24 text-center lg:text-left text-[#6f1c0b] lg:bg-transparent p-6 sm:p-8 lg:rounded-none">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Looking for a fun Hen Party idea?
             </h2>
