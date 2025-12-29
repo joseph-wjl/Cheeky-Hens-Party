@@ -44,7 +44,7 @@ export default function CheekyButler() {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 max-w-4xl w-full text-left">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 text-white">
+          <h2 className="text-6xl sm:text-7xl lg:text-7xl font-bold mb-4 text-white">
             Cheeky <br />
             Butler Service
           </h2>
@@ -121,10 +121,11 @@ export default function CheekyButler() {
       </section>
 
       {/* IMAGE BREAK */}
-      <div
-        className="w-full min-h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/butler/glass.avif)" }}
-      />
+      <div 
+        className="relative w-full flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[400px]"
+        style={{ backgroundImage: 'url(/images/butler/glass.avif)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute inset-0 bg-black/20"></div>
+      </div>
 
       {/* FAQ */}
       <section className="bg-[#FEEFEC] px-6 pb-10">

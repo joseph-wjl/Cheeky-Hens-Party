@@ -20,7 +20,7 @@ const questions = [
   },
   {
     q: "How can we book a hen party package?",
-    a: "Fill in our Booking Request Form with your party details. A $1,500 deposit is required to secure your event; the remaining amount is due one week prior.",
+    a: `Fill in our <a href='/booking' style="text-decoration: underline; font-weight: bold;">Booking Request Form</a> with your party details. A $1,500 deposit is required to secure your event; the remaining amount is due one week prior.`,
   },
   {
     q: "Where can we host the class?",
@@ -68,21 +68,6 @@ const toggle = (index: number) => {
           </div>
         </div>
       </section>
-
-      {/* Idea Section
-      <section 
-        id="idea"
-        className="bg-cover bg-center bg-no-repeat px-6 py-20 min-h-screen flex flex-col justify-center items-center text-center lg:text-left lg:pr-150 relative"
-        style={{ backgroundImage: 'url(/images/idea.png)' }}
-      >
-        <div className="relative z-10 text-[#6f1c0b] max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Looking for a fun Hen Party idea?
-          </h2>
-          <p>Let us take care of your Hen Party entertainment with our popular Life Drawing Class!</p>
-          <p>Create an unforgettable hen night for the Bride-To-Be and friends.</p>
-        </div>
-      </section> */}
 
       {/* Idea Section */}
         <section
@@ -233,9 +218,10 @@ const toggle = (index: number) => {
                     </button>
 
                     {openIndex === i && (
-                      <p className="mt-3 text-[#6f1c0b] whitespace-pre-line animate-fade">
-                        {qa.a}
-                      </p>
+                      <p 
+                        className="mt-3 text-[#6f1c0b] whitespace-pre-line animate-fade"
+                        dangerouslySetInnerHTML={{ __html: qa.a }}
+                      />
                     )}
                   </div>
                 ))}
