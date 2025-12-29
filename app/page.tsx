@@ -110,8 +110,8 @@ const toggle = (index: number) => {
           {/* Steps */}
           <div id="box" className="flex flex-col sm:flex-row items-center sm:justify-between gap-8 mb-10">
             {[
-              { icon: "fa-location-dot", title: "Choose your Hen package", desc: "Select one of our Hen Party packages and your location." },
-              { icon: "fa-mobile-screen-button", title: "Fill out our 'Booking Request Form'", desc: "Include your party details: date, number of guests, location and preferred time." },
+              { icon: "fa-location-dot", title: "Choose your Hen package", desc: "Select one of our hen party packages and your location." },
+              { icon: "fa-mobile-screen-button", title: "Fill out our Booking Form", desc: "Include your party details: date, number of guests, preferred time, etc." },
               { icon: "fa-hand-holding-dollar", title: "Book your Hen Party", desc: "A $1,500 deposit secures your event. Final payment is due one week prior." },
               { icon: "fa-champagne-glasses", title: "Enjoy the celebration!", desc: "With everything set, it's time to kick back and enjoy the fun." },
             ].map((step, i) => (
@@ -163,9 +163,9 @@ const toggle = (index: number) => {
           <h2 className="text-3xl sm:text-4xl mb-8 text-[#6f1c0b]">What our customers say</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-start py-8">
             {[
-              { name: 'Alex', text: 'This was bloody amazing! We did this for my sister\'s Hen Party in Hong Kong. Thank you so much! An hour of belly laughs.' },
-              { name: 'Cassie', text: 'This was my second time booking Foxy Hen Life Drawing for a hen party. Our facilitator did different art activities that had us all in stitches.' },
-              { name: 'Dalilah', text: 'Perfect hen party idea! Everyone had so much fun and made great memories with our bride.' }
+              { name: 'Alex', text: '"This life drawing class was hilarious and so much fun! The model was charming and posed in creative ways, and our group couldn’t stop laughing while trying to capture him on paper. Definitely made my sister’s hen party unforgettable!"' },
+              { name: 'Cassie', text: '"We were a bit nervous booking something like this, but it couldn’t have been better! He was funny, flirty in a classy way, and kept the party buzzing. The photo opportunities alone made it worth it, every moment was a memory!"' },
+              { name: 'Dalilah', text: '"From start to finish, it was an amazing night! The life drawing session was playful and funny, and everyone got involved, even the ones who hadn’t drawn since school. The model made it easy to enjoy and capture some cheeky, memorable artwork."' }
             ].map((review, i) => (
               <div key={i} className="flex flex-col bg-[#FEEFEC] w-full sm:w-[300px] h-auto sm:h-[500px] p-6 sm:p-8">
                 <div className="flex items-center justify-center h-12 sm:h-20">
