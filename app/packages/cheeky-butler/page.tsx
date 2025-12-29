@@ -38,7 +38,7 @@ export default function CheekyButler() {
     <>
       {/* HERO */}
       <section
-        className="px-6 py-20 min-h-screen flex items-center bg-cover bg-center relative"
+        className="px-6 py-20 min-h-[70vh] flex items-center bg-cover bg-center relative"
         style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/30" />
