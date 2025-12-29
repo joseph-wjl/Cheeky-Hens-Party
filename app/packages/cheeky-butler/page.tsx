@@ -19,12 +19,16 @@ const questions = [
     a: "No, you supply the alcohol and glassware. Your waiter serves drinks or food and keeps the glasses topped up.",
   },
   {
-    q: "How many butlers should I book for my Hens Party?",
-    a: "One butler is great for smaller to medium-sized groups (up to 20). For larger parties, we recommend two or more to keep the service smooth and the vibes extra cheeky.",
+    q: "How many butlers should I book for my party?",
+    a: "One butler is great for small to medium-sized groups (up to 20). For larger parties, we recommend two or more to keep the service smooth and the vibes extra cheeky.",
   },
   {
-    q: "xxx",
-    a: "xxx",
+    q: "Can we take photos or videos?",
+    a: "Yes, you're welcome to take photos and videos of the butler and your group. We encourage you to capture the fun moments!",
+  },
+  {
+    q: "Can we touch the butler?",
+    a: "A little cheeky fun is part of the experience and our butlers are usually happy to play along! Their job is to entertain you after all 😉 Just make sure you ask first, and always respect their comfort level.",
   },
 ];
 
