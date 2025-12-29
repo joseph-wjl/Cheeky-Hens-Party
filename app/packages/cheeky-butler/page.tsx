@@ -125,7 +125,7 @@ export default function CheekyButler() {
               <img
                 src="/images/butler/butler2.jpg"
                 alt="Professional service"
-                className="w-60 h-60 sm:w-60 sm:h-60 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+                className="w-60 h-60 object-cover rounded-full mb-4"
               />
               <p className="text-[#82310e]">
                 Fun, flirty atmosphere, perfect ice-breakers and instant party vibes.
@@ -136,7 +136,7 @@ export default function CheekyButler() {
               <img
                 src="/images/butler/butler3.png"
                 alt="Professional service"
-                className="w-60 h-60 sm:w-60 sm:h-60 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+                className="w-60 h-60 object-cover rounded-full mb-4"
               />
               <p className="text-[#82310e]">
                 Perfect for hens parties, girls night, divorce parties, birthday parties. Any event that needs a cheeky topless twist.
