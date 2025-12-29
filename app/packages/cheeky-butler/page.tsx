@@ -99,7 +99,7 @@ export default function CheekyButler() {
               <div key={i} className="max-w-xs flex flex-col items-center">
                 <img
                   src={`/images/butler/${img}`}
-                  className="w-48 h-48 sm:w-60 sm:h-60 rounded-full object-cover mb-4"
+                  className="w-48 h-48 sm:w-80 sm:h-80 rounded-full object-cover mb-4"
                   alt="Cheeky Butler"
                 />
                 <p className="text-[#82310e]">
