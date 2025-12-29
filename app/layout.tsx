@@ -28,6 +28,9 @@ export const metadata = {
     "hunky male models hong kong",
     "strippers hong kong",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
   alternates: {
     canonical: "https://cheekyhenparty.com",
   },
