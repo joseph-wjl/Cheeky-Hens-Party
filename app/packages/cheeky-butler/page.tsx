@@ -101,7 +101,7 @@ export default function CheekyButler() {
         </div>
       </section>
 
-      {/* WHY SECTION (HARD-CODED) */}
+      {/* WHY SECTION */}
       <section className="px-6 py-10 bg-[#FFDED6]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-[#82310e]">

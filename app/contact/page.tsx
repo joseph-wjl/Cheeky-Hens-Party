@@ -1,9 +1,9 @@
 "use client";
 
-import { useForm } from "@formspree/react";
+import { useState } from "react";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("myzrbzgk");
+  const [submitted, setSubmitted] = useState(false);
 
   const formatPhone = (e: React.FormEvent<HTMLInputElement>) => {
     let v = e.currentTarget.value.replace(/\D/g, "").slice(0, 8);
@@ -13,7 +13,7 @@ export default function Contact() {
     e.currentTarget.value = v;
   };
 
-  if (state.succeeded) {
+  if (submitted) {
     return (
       <div className="px-6 py-20 text-center bg-[#FEEFEC] text-[#82310e]">
         <h1 className="text-4xl font-bold mb-6">Message Sent 💌</h1>
@@ -34,20 +34,18 @@ export default function Contact() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 text-white">
           <h1 className="text-6xl sm:text-7xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl sm:text-2xl">
-            Get in touch with the Cheeky Hen team
-          </p>
+          <p className="text-xl sm:text-2xl">Get in touch with the Cheeky Hen team</p>
         </div>
       </section>
 
       {/* FORM */}
       <div className="px-6 py-10 bg-[#FCCFC5] flex justify-center">
         <form
-          onSubmit={handleSubmit}
+          action="https://formspree.io/f/mykylygk"
+          method="POST"
           className="p-10 max-w-4xl w-full"
+          onSubmit={() => setSubmitted(true)}
         >
-
-          {/* 🔑 SINGLE PARENT LAYOUT */}
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
             {/* First Name */}
             <div className="order-1">
@@ -127,20 +125,11 @@ export default function Contact() {
           <div className="mt-10 text-center">
             <button
               type="submit"
-              disabled={state.submitting}
               className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition"
             >
               Send Message
             </button>
           </div>
-
-          {/* CONTACT INFO
-          <div className="mt-16 text-center text-[#82310e]">
-            <h3 className="text-2xl font-bold mb-4">Other Ways to Reach Us</h3>
-            <p className="mb-2">📧 cheekyhenparty@gmail.com</p>
-            <p className="mb-2">📞 +852 5785-6409</p>
-            <p>📍 Hong Kong</p>
-          </div> */}
         </form>
       </div>
     </>
