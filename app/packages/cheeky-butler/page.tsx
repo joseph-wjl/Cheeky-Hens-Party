@@ -139,7 +139,7 @@ export default function CheekyButler() {
                 className="w-60 h-60 object-cover rounded-full mb-4"
               />
               <p className="text-[#82310e]">
-                Perfect for hens parties, girls night, divorce parties, birthday parties. Any event that needs a cheeky topless twist.
+                Perfect for hen parties, girls night, birthday parties, and more!
               </p>
             </div>
           </div>
