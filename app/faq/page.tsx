@@ -15,7 +15,7 @@ export default function Faq() {
             Questions
           </h2>
           <p className="text-xl sm:text-2xl mb-8 sm:mb-12 text-white">
-            Everything you need to know about our Hens Party packages
+            Everything you need to know about our Hen Party packages
           </p>
         </div>
       </section>

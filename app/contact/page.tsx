@@ -41,14 +41,11 @@ export default function Contact() {
       </section>
 
       {/* FORM */}
-      <div className="px-6 py-20 bg-[#FCCFC5] flex justify-center">
+      <div className="px-6 py-10 bg-[#FCCFC5] flex justify-center">
         <form
           onSubmit={handleSubmit}
           className="p-10 max-w-4xl w-full"
         >
-          <h2 className="text-4xl font-bold mb-10 text-center text-[#82310e]">
-            Reach Out to Us
-          </h2>
 
           {/* 🔑 SINGLE PARENT LAYOUT */}
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
