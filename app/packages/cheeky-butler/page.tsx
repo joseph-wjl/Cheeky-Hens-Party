@@ -49,7 +49,7 @@ export default function CheekyButler() {
           bg-cover
           bg-no-repeat
           relative
-          bg-[position:93%_20%] sm:bg-center
+          bg-[position:93%_20%] sm:bg-left
         "
         style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
       >
@@ -113,7 +113,7 @@ export default function CheekyButler() {
               <img
                 src="/images/butler/butler1.jpg"
                 alt="Professional service"
-                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+                className="w-32 h-32 sm:w-60 sm:h-60 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
               />
 
               <p className="text-[#82310e]">
