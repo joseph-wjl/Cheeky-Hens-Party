@@ -24,7 +24,7 @@ const questions = [
   },
   {
     q: "Where can we host the class?",
-    a: "Private indoor spaces like hotel suites, function rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host the class in our art studio.",
+    a: "Private indoor spaces like hotel suites, function rooms, party rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host the class in our art studio.",
   },
   {
     q: "Why should you book a life drawing class for a hen party?",

@@ -11,16 +11,16 @@ const questions = [
     a: "He serves drinks, entertains guests, can participate in games, helps with photos, and keeps the fun flowing, all while shirtless and looking fine.",
   },
   {
-    q: "How many Cheeky Butlers should I book for my Hens Party?",
-    a: "One butler is great for smaller to medium-sized groups (up to 20). For larger parties, we recommend two or more to keep the service smooth and the vibes extra cheeky.",
+    q: "What will the butler wear?",
+    a: "Our Cheeky Butler typically wears nothing but an apron and bow tie — confident, cheeky, and tasteful. If you’re after something a little more daring, you can request your butler to be fully nude!",
   },
   {
     q: "Do you provide the drinks?",
     a: "No, you supply the alcohol and glassware. Your waiter serves drinks or food and keeps the glasses topped up.",
   },
   {
-    q: "xxx",
-    a: "xxx",
+    q: "How many butlers should I book for my Hens Party?",
+    a: "One butler is great for smaller to medium-sized groups (up to 20). For larger parties, we recommend two or more to keep the service smooth and the vibes extra cheeky.",
   },
   {
     q: "xxx",
