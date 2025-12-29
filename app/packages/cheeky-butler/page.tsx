@@ -49,7 +49,7 @@ export default function CheekyButler() {
           bg-cover
           bg-no-repeat
           relative
-          bg-[position:93%_20%] sm:bg-left
+          bg-[position:53%_20%] sm:bg-right
         "
         style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
       >
