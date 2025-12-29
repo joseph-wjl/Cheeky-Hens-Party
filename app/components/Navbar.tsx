@@ -83,7 +83,7 @@ export default function Navbar() {
             {/* Packages Toggle */}
             <button
               onClick={() => setPackagesOpen(!packagesOpen)}
-              className="flex items-center gap-2 font-semibold"
+              className="flex items-center gap-2"
             >
               Packages
               <ChevronDown

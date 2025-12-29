@@ -36,31 +36,6 @@ export default function CheekyButler() {
 
   return (
     <>
-      {/* HERO */}
-      {/* <section
-        className="px-6 py-20 min-h-[70vh] flex items-center bg-cover bg-center relative"
-        style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
-      >
-        <div className="absolute inset-0 bg-black/30" />
-
-        <div className="relative z-10 max-w-4xl w-full text-left">
-          <h2 className="text-6xl sm:text-7xl font-bold mb-4 text-white">
-            Cheeky <br />
-            Butler Service
-          </h2>
-
-          <p className="text-lg sm:text-2xl mb-10 text-white max-w-xl">
-            Because sometimes, the best accessory to a glass of bubbles... is a six-pack!
-          </p>
-
-          <a
-            href="/booking"
-            className="px-6 sm:px-10 py-3 text-white border border-white hover:text-black hover:border-black transition inline-block"
-          >
-            Book Now
-          </a>
-        </div>
-      </section> */}
 
       {/* Hero Section */}
       <section 
