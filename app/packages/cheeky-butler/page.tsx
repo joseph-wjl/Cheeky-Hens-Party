@@ -79,24 +79,24 @@ export default function CheekyButler() {
       {/* DETAILS */}
       <section className="px-6 py-10 bg-[#FEEFEC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#82310e]">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#82310e] mt-6 mb-10">
             Create the Ultimate Hen Party
           </h2>
 
-          <p className="mb-4">
-            Our hunky male butlers bring cheeky charm, five-star service, and unforgettable fun.
+          <p className="mb-10">
+            Our Hunky Male Topless Waiters are the ultimate mix of eye candy, cheeky charm, and five-star service. From greeting your guests to topping up drinks, and making sure the bride feels like a queen, they'll keep the party buzzing all night.
           </p>
 
-          <p className="font-semibold mb-6">
+          <p className="font-semibold mb-10">
             PRICE: $2,000 for 2 hours (additional hours available)
           </p>
 
-          <ul className="list-disc pl-6 text-left space-y-2 text-sm sm:text-base">
-            <li>Professional, handsome male butler</li>
+          <ul className="list-disc pl-6 text-left space-y-2 text-sm sm:text-base mb-6">
+            <li>Professional, handsome male topless butler, charming, fun and ready to serve</li>
             <li>2 hours of service (option to extend)</li>
-            <li>Drink service — you supply the booze</li>
-            <li>Games & fun interactions</li>
-            <li>Photo opportunities</li>
+            <li>Drink service, you supply the booze, they bring the vibe</li>
+            <li>Opportunity for the butler to be involved in games</li>
+            <li>Fun photo opportunities with your butler</li>
           </ul>
         </div>
       </section>
