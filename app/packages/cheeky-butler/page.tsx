@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 export default function CheekyButler() {
   const questions = [
     {
-      q: "What does a male Cheeky Butler do?",
+      q: "What does a Cheeky Butler do?",
       a: "He serves drinks, entertains guests, can participate in games, helps with photos, and keeps the fun flowing, all while shirtless and looking fine.",
     },
     {
@@ -37,14 +37,14 @@ export default function CheekyButler() {
   return (
     <>
       {/* HERO */}
-      <section
+      {/* <section
         className="px-6 py-20 min-h-[70vh] flex items-center bg-cover bg-center relative"
         style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 max-w-4xl w-full text-left">
-          <h2 className="text-6xl sm:text-7xl lg:text-7xl font-bold mb-4 text-white">
+          <h2 className="text-6xl sm:text-7xl font-bold mb-4 text-white">
             Cheeky <br />
             Butler Service
           </h2>
@@ -56,6 +56,45 @@ export default function CheekyButler() {
           <a
             href="/booking"
             className="px-6 sm:px-10 py-3 text-white border border-white hover:text-black hover:border-black transition inline-block"
+          >
+            Book Now
+          </a>
+        </div>
+      </section> */}
+
+      {/* Hero Section */}
+      <section 
+        id="hero"
+        className="
+          px-4 sm:px-6
+          py-12 sm:py-20
+          text-left
+          min-h-[70vh] sm:min-h-screen
+          flex flex-col justify-center items-center
+          bg-cover
+          bg-no-repeat
+          relative
+          bg-[position:93%_20%] sm:bg-center
+        "
+        style={{ backgroundImage: "url(/images/butler/hero.jpg)" }}
+      >
+
+      {/* Overlay */}
+        <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Content */}
+        <div className="relative z-10 max-w-md sm:max-w-none text-left sm:text-left sm:pr-50">
+          <h2 className="text-6xl sm:text-7xl font-bold mb-4 text-white">
+            Cheeky Butler
+          </h2>
+
+          <p className="text-lg sm:text-2xl mb-8 sm:mb-12 text-white">
+            Because sometimes, the best accessory to a glass of bubbles... is a six-pack!
+          </p>
+
+          <a
+            href="/booking"
+            className="px-8 sm:px-15 py-3 text-white border border-white hover:text-black hover:border-black transition inline-block"
           >
             Book Now
           </a>
@@ -87,26 +126,47 @@ export default function CheekyButler() {
         </div>
       </section>
 
-      {/* WHY */}
+      {/* WHY SECTION (HARD-CODED) */}
       <section className="px-6 py-10 bg-[#FFDED6]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-[#82310e]">
             Why Hire A Cheeky Butler?
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-10 items-center justify-center">
-            {["butler1.jpg", "butler2.jpg", "butler3.png"].map((img, i) => (
-              <div key={i} className="max-w-xs flex flex-col items-center">
-                <img
-                  src={`/images/butler/${img}`}
-                  className="w-48 h-48 sm:w-80 sm:h-80 rounded-full object-cover mb-4"
-                  alt="Cheeky Butler"
-                />
-                <p className="text-[#82310e]">
-                  Fun, cheeky, and professionally unforgettable.
-                </p>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-10 justify-center items-center">
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/images/butler/butler1.jpg"
+                alt="Professional service"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+              />
+
+              <p className="text-[#82310e]">
+                Stress free hosting, drinks topped up, photos taken, guest entertained. 
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/images/butler/butler2.jpg"
+                alt="Professional service"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+              />
+              <p className="text-[#82310e]">
+                Fun, flirty atmosphere, perfect ice-breakers and instant party vibes.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/images/butler/butler3.png"
+                alt="Professional service"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60 object-cover rounded-full mb-4"
+              />
+              <p className="text-[#82310e]">
+                Perfect for hens parties, girls night, divorce parties, birthday parties. Any event that needs a cheeky topless twist.
+              </p>
+            </div>
           </div>
 
           <div className="mt-12">
@@ -121,10 +181,11 @@ export default function CheekyButler() {
       </section>
 
       {/* IMAGE BREAK */}
-      <div 
-        className="relative w-full flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[400px]"
-        style={{ backgroundImage: 'url(/images/butler/glass.avif)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <div className="absolute inset-0 bg-black/20"></div>
+      <div
+        className="relative w-full min-h-[300px] sm:min-h-[400px] bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/butler/glass.avif)" }}
+      >
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* FAQ */}
@@ -144,7 +205,9 @@ export default function CheekyButler() {
                   {qa.q}
                 </h3>
                 <ChevronDown
-                  className={`transition ${openIndex === i ? "rotate-180" : ""}`}
+                  className={`transition ${
+                    openIndex === i ? "rotate-180" : ""
+                  }`}
                 />
               </button>
 
