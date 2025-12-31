@@ -1,50 +1,84 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [packagesOpen, setPackagesOpen] = useState(false);
+
+  const linkClass = (href: string) =>
+    `relative transition ${
+      pathname === href ? "font-bold" : ""
+    }`;
 
   return (
     <>
-      {/* ================= DESKTOP NAV ================= */}
-      <nav className="sticky top-0 z-50 w-full bg-[#FCCFC5] shadow">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* DESKTOP NAV */}
+      <nav className="w-full bg-[#e3e2df] shadow">
+        <div className="max-w-7xl mx-auto py-4 flex justify-center items-center">
 
-          <Link href="/" className="text-xl font-bold text-[#6f1c0b]">
-            CHEEKY HEN PARTY.
-          </Link>
+          <ul className="hidden md:flex items-center gap-10 text-lg text-[#6f1c0b]">
 
-          <ul className="hidden md:flex gap-12 text-lg text-[#6f1c0b] items-center">
-            <li><Link href="/">Home</Link></li>
-
-            <li className="relative group cursor-pointer">
-              <span>Packages</span>
-              <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                <Link href="/packages/classic-life-drawing" className="block px-4 py-2 hover:bg-[#FEEFEC]">
-                  Classic Life Drawing
-                </Link>
-                <Link href="/packages/cheeky-butler" className="block px-4 py-2 hover:bg-[#FEEFEC]">
-                  Cheeky Butler
-                </Link>
-                <Link href="/packages/nude-paint-sip" className="block px-4 py-2 hover:bg-[#FEEFEC]">
-                  Nude Paint & Sip
-                </Link>
-              </div>
+            {/* LEFT LINKS */}
+            <li>
+              <Link href="/" className={linkClass("/")}>
+                Home
+                {pathname === "/" && (
+                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#6f1c0b]" />
+                )}
+              </Link>
             </li>
 
-            <li><Link href="/gallery">Gallery</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/booking">Booking</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li>
+              <Link href="/packages" className={linkClass("/packages")}>
+                Packages
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/gallery" className={linkClass("/gallery")}>
+                Gallery
+              </Link>
+            </li>
+
+            {/* LOGO CENTER */}
+            <li className="mx-6">
+              <Link href="/">
+                <img
+                  src="/images/logo.png"
+                  alt="Cheeky Hen Party Logo"
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </li>
+
+            {/* RIGHT LINKS */}
+            <li>
+              <Link href="/faq" className={linkClass("/faq")}>
+                FAQ
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/booking" className={linkClass("/booking")}>
+                Booking
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact" className={linkClass("/contact")}>
+                Contact
+              </Link>
+            </li>
           </ul>
 
+          {/* MOBILE TOGGLE */}
           <button
-            className="md:hidden text-[#6f1c0b]"
             onClick={() => setMenuOpen(true)}
+            className="md:hidden absolute right-6 text-[#6f1c0b]"
             aria-label="Open Menu"
           >
             <Menu size={28} />
@@ -52,90 +86,29 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ================= MOBILE FULLSCREEN MENU ================= */}
+      {/* MOBILE MENU */}
       {menuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#FCCFC5] md:hidden">
+        <div className="fixed inset-0 z-50 bg-[#FCCFC5] md:hidden flex flex-col items-center justify-center text-2xl text-[#6f1c0b] space-y-6">
 
-          {/* Top bar */}
-          <div className="flex items-center justify-between px-6 py-4">
-            <span className="text-xl font-bold text-[#6f1c0b]">
-              CHEEKY HEN PARTY.
-            </span>
-            <button
-              onClick={() => {
-                setMenuOpen(false);
-                setPackagesOpen(false);
-              }}
-              aria-label="Close Menu"
-              className="text-[#6f1c0b]"
-            >
-              <X size={32} />
-            </button>
-          </div>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="absolute top-6 right-6 text-3xl"
+          >
+            ✕
+          </button>
 
-          {/* Menu */}
-          <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] text-[#6f1c0b] text-2xl space-y-6">
-
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-
-            {/* Packages Toggle */}
-            <button
-              onClick={() => setPackagesOpen(!packagesOpen)}
-              className="flex items-center gap-2"
-            >
-              Packages
-              <ChevronDown
-                size={22}
-                className={`transition-transform ${
-                  packagesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {/* Packages Links */}
-            {packagesOpen && (
-              <div className="flex flex-col items-center space-y-3 text-xl">
-                <Link
-                  href="/packages/classic-life-drawing"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Classic Life Drawing
-                </Link>
-                <Link
-                  href="/packages/cheeky-butler"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Cheeky Butler
-                </Link>
-                <Link
-                  href="/packages/nude-paint-sip"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Nude Paint & Sip
-                </Link>
-              </div>
-            )}
-
-            <Link href="/gallery" onClick={() => setMenuOpen(false)}>
-              Gallery
-            </Link>
-            <Link href="/faq" onClick={() => setMenuOpen(false)}>
-              FAQ
-            </Link>
-            <Link href="/booking" onClick={() => setMenuOpen(false)}>
-              Booking
-            </Link>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </Link>
-          </div>
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/packages" onClick={() => setMenuOpen(false)}>Packages</Link>
+          <Link href="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+          <Link href="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link href="/booking" onClick={() => setMenuOpen(false)}>Booking</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
     </>
   );
 }
+
 
 
 
