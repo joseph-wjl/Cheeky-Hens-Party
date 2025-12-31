@@ -28,7 +28,7 @@ export default function Contact() {
     <>
       {/* HERO */}
       <section
-        className="px-6 py-20 text-center min-h-screen flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat relative"
+        className="px-6 py-20 text-center min-h-150 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: "url(/images/hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/30"></div>

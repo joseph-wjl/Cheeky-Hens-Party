@@ -45,8 +45,8 @@ export default function BookingPage() {
   return (
     <>
       {/* HEADER */}
-      <div className="px-6 py-20 bg-[#FEEFEC] text-center text-[#82310e]">
-        <h1 className="text-5xl sm:text-6xl font-bold mb-10">
+      <div className="px-6 py-20 bg-[#FCCFC5] text-center text-[#82310e]">
+        <h1 className="text-5xl sm:text-6xl font-bold mb-10 mt-10">
           Booking Request Form
         </h1>
         <h2 className="text-xl sm:text-2xl mb-8">
@@ -62,7 +62,7 @@ export default function BookingPage() {
       </div>
 
       {/* FORM */}
-      <div className="px-6 py-20 flex justify-center bg-[#FCCFC5]">
+      <div className="px-6 py-20 flex justify-center bg-[#FEEFEC]">
         <form
           onSubmit={handleSubmit}
           className="p-10 max-w-5xl w-full"
