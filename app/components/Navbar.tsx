@@ -103,11 +103,11 @@ export default function Navbar() {
           </ul>
 
           {/* MOBILE TOGGLE */}
-          <img
+          {/* <img
                   src="/images/logo.png"
                   alt="Cheeky Hen Party Logo"
                   className="h-15 w-auto absolute left-3 top-1"
-                />
+                /> */}
           <button
             onClick={() => setMenuOpen(true)}
             className="md:hidden absolute right-3 text-[#ffffff] mt-5"
