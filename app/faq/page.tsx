@@ -90,10 +90,10 @@ export default function Faq() {
       </section>
 
       {/* More Questions – full width */}
-      <section className="w-full bg-white">
+      <section className="w-full min-h-70 bg-white">
         <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="pb-20 text-center">
-            <h2 className="text-2xl sm:text-3xl py-4 mt-10 text-[#6f1c0b] font-bold">
+          <div className="pb-20 text-center justify-center flex flex-col items-center">
+            <h2 className="text-2xl sm:text-3xl py-4 mt-15 text-[#6f1c0b] font-bold">
               Got more questions?
             </h2>
             <a

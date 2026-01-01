@@ -33,7 +33,7 @@ export default function BookingPage() {
 
   if (state.succeeded) {
     return (
-      <div className="px-6 py-20 text-center text-[#82310e] bg-[#FEEFEC]">
+      <div className="px-6 py-20 text-center text-[#82310e] bg-[#e3e2df]">
         <h1 className="text-4xl font-bold mb-6">Booking Received!</h1>
         <p className="text-xl">
           Thanks for your request. We’ll get back to you within 24 hours.
@@ -45,7 +45,7 @@ export default function BookingPage() {
   return (
     <>
       {/* HEADER */}
-      <div className="px-6 py-20 bg-[#FCCFC5] text-center text-[#82310e]">
+      <div className="px-6 py-20 bg-[#e3e2df] text-center text-[#82310e]">
         <h1 className="text-5xl sm:text-6xl font-bold mb-10 mt-10">
           Booking Request Form
         </h1>
