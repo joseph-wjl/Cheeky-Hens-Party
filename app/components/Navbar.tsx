@@ -43,7 +43,7 @@ export default function Navbar() {
               </span>
 
               {/* Dropdown Menu */}
-              <div className="absolute z-50 left-0 top-full mt-2 w-56 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="absolute z-50 -left-8 top-full mt-2 w-40 bg-[#FCCFC5] text-[#6f1c0b] text-sm text-center shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <Link
                   href="/packages/classic-life-drawing"
                   className="block px-4 py-3 hover:bg-[#FEEFEC]"
