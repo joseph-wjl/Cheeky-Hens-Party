@@ -14,9 +14,7 @@ export default function Navbar() {
     pathname === href || pathname.startsWith(href + "/");
 
   const linkStyle = (href: string) =>
-    `relative cursor-pointer ${
-      isActive(href) ? "font-bold" : ""
-    }`;
+    `relative cursor-pointer ${isActive(href) ? "font-bold" : ""}`;
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -70,15 +68,17 @@ export default function Navbar() {
             </li>
 
             <li>
-              <Link href="/gallery" className={linkStyle("/gallery")}>
-                Gallery
-              </Link>
+              <Link href="/gallery" className={linkStyle("/gallery")}>Gallery</Link>
             </li>
 
             {/* CENTER LOGO */}
             <li className="mx-6 hidden md:block">
               <Link href="/">
-                <img src="/images/logo.png" alt="Cheeky Hen Party Logo" className="h-14 w-auto" />
+                <img
+                  src="/images/logo.png"
+                  alt="Cheeky Hen Party Logo"
+                  className="h-14 w-auto"
+                />
               </Link>
             </li>
 
@@ -117,15 +117,10 @@ export default function Navbar() {
       <div
         className={`fixed top-0 right-0 h-full w-full max-w-sm bg-[#FCCFC5] z-[70]
         transform transition-transform duration-300 ease-out md:hidden
-        ${menuOpen ? "translate-x-0" : "translate-x-full"}
-        will-change-transform`}
+        ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* TOP BAR */}
-        <div className="flex justify-between items-center px-6 py-4">
-          <Link href="/" onClick={() => setMenuOpen(false)}>
-            <img src="/images/logo.png" alt="Cheeky Hen Party Logo" className="h-12 w-auto" />
-          </Link>
-
+        {/* TOP BAR (NO LOGO) */}
+        <div className="flex justify-end px-6 py-4">
           <button
             onClick={() => setMenuOpen(false)}
             className="text-3xl text-[#6f1c0b] transition-transform duration-200 hover:rotate-90"
@@ -136,36 +131,42 @@ export default function Navbar() {
         </div>
 
         {/* MENU ITEMS */}
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] space-y-6 text-2xl text-[#6f1c0b]">
+        <div className="flex flex-col items-center pt-10 px-6 text-2xl text-[#6f1c0b] gap-6">
 
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
           {/* MOBILE PACKAGES */}
-          <button
-            onClick={() => setPackagesOpen(!packagesOpen)}
-            className="flex items-center gap-2"
-          >
-            Packages
-            <ChevronDown
-              className={`transition-transform duration-300 ${
-                packagesOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
+          <div className="flex flex-col items-center w-full">
+            <button
+              onClick={() => setPackagesOpen(!packagesOpen)}
+              className="flex items-center gap-2 w-full justify-center"
+            >
+              Packages
+              <ChevronDown
+                className={`transition-transform duration-300 ${
+                  packagesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-          {packagesOpen && (
-            <div className="flex flex-col space-y-3 text-xl">
-              <Link href="/packages/classic-life-drawing" onClick={() => setMenuOpen(false)}>
-                Classic Life Drawing
-              </Link>
-              <Link href="/packages/cheeky-butler" onClick={() => setMenuOpen(false)}>
-                Cheeky Butler
-              </Link>
-              <Link href="/packages/nude-paint-sip" onClick={() => setMenuOpen(false)}>
-                Nude Paint & Sip
-              </Link>
+            {/* EXPANDING DROPDOWN */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out text-xl text-center
+              ${packagesOpen ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}`}
+            >
+              <div className="flex flex-col space-y-3">
+                <Link href="/packages/classic-life-drawing" onClick={() => setMenuOpen(false)}>
+                  Classic Life Drawing
+                </Link>
+                <Link href="/packages/cheeky-butler" onClick={() => setMenuOpen(false)}>
+                  Cheeky Butler
+                </Link>
+                <Link href="/packages/nude-paint-sip" onClick={() => setMenuOpen(false)}>
+                  Nude Paint & Sip
+                </Link>
+              </div>
             </div>
-          )}
+          </div>
 
           <Link href="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
           <Link href="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
