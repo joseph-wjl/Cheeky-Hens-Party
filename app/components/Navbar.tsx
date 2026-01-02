@@ -135,7 +135,7 @@ export default function Navbar() {
 
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-          {/* MOBILE PACKAGES */}
+          {/* MOBILE PACKAGES with natural smooth max-height + stagger */}
           <div className="flex flex-col items-center w-full">
             <button
               onClick={() => setPackagesOpen(!packagesOpen)}
@@ -149,21 +149,31 @@ export default function Navbar() {
               />
             </button>
 
-            {/* EXPANDING DROPDOWN */}
+            {/* Smooth expanding dropdown */}
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out text-xl text-center
-              ${packagesOpen ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}`}
+              className={`overflow-hidden transition-[max-height,margin,opacity,transform] duration-500
+                ease-[cubic-bezier(0.4,0,0.2,1)] text-xl text-center
+                ${packagesOpen ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}
+              `}
             >
               <div className="flex flex-col space-y-3">
-                <Link href="/packages/classic-life-drawing" onClick={() => setMenuOpen(false)}>
-                  Classic Life Drawing
-                </Link>
-                <Link href="/packages/cheeky-butler" onClick={() => setMenuOpen(false)}>
-                  Cheeky Butler
-                </Link>
-                <Link href="/packages/nude-paint-sip" onClick={() => setMenuOpen(false)}>
-                  Nude Paint & Sip
-                </Link>
+                {[
+                  { href: "/packages/classic-life-drawing", label: "Classic Life Drawing" },
+                  { href: "/packages/cheeky-butler", label: "Cheeky Butler" },
+                  { href: "/packages/nude-paint-sip", label: "Nude Paint & Sip" },
+                ].map((link, index) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`transform transition-all duration-300 ease-out
+                      ${packagesOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}
+                    `}
+                    style={{ transitionDelay: `${index * 100}ms` }} // stagger
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
