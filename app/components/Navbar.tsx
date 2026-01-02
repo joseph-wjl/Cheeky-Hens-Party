@@ -20,18 +20,28 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ================= DESKTOP NAV ================= */}
-      <nav className="absolute top-0 left-0 w-full z-50  transition-all duration-300">
-        <div className="max-w-7xl mx-auto py-4 flex justify-center items-center">
+      {/* ================= NAVBAR ================= */}
+      <nav className="absolute top-0 left-0 w-full z-50">
+        <div className="max-w-7xl mx-auto py-4 flex items-center justify-center relative">
 
-          <ul className="hidden md:flex items-center gap-10 text-lg text-[#ffffff]">
+          {/* ================= MOBILE LOGO (LEFT) ================= */}
+          <Link href="/" className="md:hidden absolute left-3">
+            <img
+              src="/images/logo.png"
+              alt="Cheeky Hen Party Logo"
+              className="h-12 w-auto mt-10"
+            />
+          </Link>
 
-            {/* LEFT */}
+          {/* ================= DESKTOP NAV ================= */}
+          <ul className="hidden md:flex items-center gap-10 text-lg text-white">
+
+            {/* LEFT LINKS */}
             <li>
               <Link href="/" className={linkStyle("/")}>
                 Home
                 {isActive("/") && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#ffffff]" />
+                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-white" />
                 )}
               </Link>
             </li>
@@ -42,8 +52,7 @@ export default function Navbar() {
                 Packages <ChevronDown size={16} />
               </span>
 
-              {/* Dropdown Menu */}
-              <div className="absolute z-50 -left-8 top-full mt-2 w-40 bg-[#FCCFC5] text-[#6f1c0b] text-sm text-center shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-44 bg-[#FCCFC5] text-[#6f1c0b] text-sm text-center shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <Link
                   href="/packages/classic-life-drawing"
                   className="block px-4 py-3 hover:bg-[#FEEFEC]"
@@ -71,18 +80,18 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {/* LOGO CENTER */}
-            <li className="mx-6">
+            {/* CENTER LOGO (DESKTOP ONLY) */}
+            <li className="mx-6 hidden md:block">
               <Link href="/">
                 <img
                   src="/images/logo.png"
                   alt="Cheeky Hen Party Logo"
-                  className="h-15 w-auto"
+                  className="h-14 w-auto"
                 />
               </Link>
             </li>
 
-            {/* RIGHT */}
+            {/* RIGHT LINKS */}
             <li>
               <Link href="/faq" className={linkStyle("/faq")}>
                 FAQ
@@ -102,15 +111,10 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* MOBILE TOGGLE */}
-          {/* <img
-                  src="/images/logo.png"
-                  alt="Cheeky Hen Party Logo"
-                  className="h-15 w-auto absolute left-3 top-1"
-                /> */}
+          {/* ================= MOBILE MENU BUTTON ================= */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden absolute right-3 text-[#ffffff] mt-5"
+            className="md:hidden absolute right-5 text-white mt-10"
             aria-label="Open Menu"
           >
             <Menu size={28} />
@@ -124,18 +128,23 @@ export default function Navbar() {
 
           {/* Top bar */}
           <div className="flex justify-between items-center px-6 py-4">
-            <span className="font-bold text-xl text-[#6f1c0b]">
+            <Link href="/" onClick={() => setMenuOpen(false)}>
               <img
-                  src="/images/logo.png"
-                  alt="Cheeky Hen Party Logo"
-                  className="h-15 w-auto"
-                />
-            </span>
-            <button onClick={() => setMenuOpen(false)} className="text-2xl -mt-9">
+                src="/images/logo.png"
+                alt="Cheeky Hen Party Logo"
+                className="h-12 w-auto"
+              />
+            </Link>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-2xl text-[#6f1c0b]"
+              aria-label="Close Menu"
+            >
               ✕
             </button>
           </div>
 
+          {/* Menu items */}
           <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] space-y-6 text-2xl text-[#6f1c0b]">
 
             <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
@@ -147,7 +156,9 @@ export default function Navbar() {
             >
               Packages
               <ChevronDown
-                className={`transition ${packagesOpen ? "rotate-180" : ""}`}
+                className={`transition-transform ${
+                  packagesOpen ? "rotate-180" : ""
+                }`}
               />
             </button>
 
