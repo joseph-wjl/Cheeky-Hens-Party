@@ -70,11 +70,11 @@ const toggle = (index: number) => {
       </section>
 
       {/* Idea Section */}
-        <section
+      <section
           id="idea"
           className="relative bg-cover bg-center bg-no-repeat px-6 py-16 sm:py-20 lg:min-h-screen flex items-center"
           style={{ backgroundImage: "url(/images/idea.png)" }}
-        >
+      >
           {/* Overlay */}
           <div className="absolute inset-0 bg-[#FCCFC5]/70 lg:bg-transparent" />
 
@@ -92,8 +92,7 @@ const toggle = (index: number) => {
               Create an unforgettable hen night for the Bride-To-Be and friends.
             </p>
           </div>
-        </section>
-
+      </section>
 
       {/* Process Section */}
       <section
@@ -157,7 +156,7 @@ const toggle = (index: number) => {
       {/* Review Section */}
       <section
         id="reviews"
-        className="text-black py-20 text-center bg-white"
+        className="text-black py-20 text-center bg-white relative"
       >
         <div className="px-6 max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl mb-8 text-[#6f1c0b]">What our customers say</h2>
@@ -183,51 +182,54 @@ const toggle = (index: number) => {
         </div>
       </section>
 
+      {/* Banana image sitting just above the Questions section */}
+      <div className="relative w-full -mt-42 sm:-mt-42 lg:-mt-42">
+        <img 
+          src="/images/banana.png" 
+          alt="a hand holding a banana" 
+          className="w-80"
+        />
+      </div>
+
       {/* Questions Section */}
-
       <section
-            id="questions"
-            className="text-center bg-[#FEEFEC] pb-10 px-6"
-          >
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl pt-12 pb-10 text-[#6f1c0b]">
-                Have questions? We've got the answers
-              </h2>
+        id="questions"
+        className="text-center bg-[#FEEFEC] pb-10 px-6"
+      >
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl pt-12 pb-10 text-[#6f1c0b]">
+            Have questions? We've got the answers
+          </h2>
 
-              <div className="space-y-4 text-left">
-                {questions.map((qa, i) => (
-                  <div
-                    key={i}
-                    className="border-b border-[#e4b9ae] pb-4"
-                  >
-                    <button
-                      onClick={() => toggle(i)}
-                      className="w-full flex justify-between items-center text-left "
-                      
-                    >
-                      <h3 className="text-xl sm:text-2xl text-[#6f1c0b] font-bold">
-                        {qa.q}
-                      </h3>
+          <div className="space-y-4 text-left">
+            {questions.map((qa, i) => (
+              <div key={i} className="border-b border-[#e4b9ae] pb-4">
+                <button
+                  onClick={() => toggle(i)}
+                  className="w-full flex justify-between items-center text-left"
+                >
+                  <h3 className="text-xl sm:text-2xl text-[#6f1c0b] font-bold">
+                    {qa.q}
+                  </h3>
 
-                      <ChevronDown
-                        className={`w-6 h-6 text-[#6f1c0b] transition-transform duration-500 ${
-                          openIndex === i ? "rotate-180" : ""
-                        }`}
-                      />
+                  <ChevronDown
+                    className={`w-6 h-6 text-[#6f1c0b] transition-transform duration-500 ${
+                      openIndex === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-                    </button>
-
-                    {openIndex === i && (
-                      <p 
-                        className="mt-3 text-[#6f1c0b] whitespace-pre-line animate-fade"
-                        dangerouslySetInnerHTML={{ __html: qa.a }}
-                      />
-                    )}
-                  </div>
-                ))}
+                {openIndex === i && (
+                  <p 
+                    className="mt-3 text-[#6f1c0b] whitespace-pre-line animate-fade"
+                    dangerouslySetInnerHTML={{ __html: qa.a }}
+                  />
+                )}
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
