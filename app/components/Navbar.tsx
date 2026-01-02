@@ -135,7 +135,7 @@ export default function Navbar() {
 
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-          {/* MOBILE PACKAGES with natural smooth max-height + stagger */}
+          {/* MOBILE PACKAGES with ultra-smooth natural dropdown */}
           <div className="flex flex-col items-center w-full">
             <button
               onClick={() => setPackagesOpen(!packagesOpen)}
@@ -149,11 +149,11 @@ export default function Navbar() {
               />
             </button>
 
-            {/* Smooth expanding dropdown */}
+            {/* Smooth dropdown container */}
             <div
-              className={`overflow-hidden transition-[max-height,margin,opacity,transform] duration-500
-                ease-[cubic-bezier(0.4,0,0.2,1)] text-xl text-center
-                ${packagesOpen ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}
+              className={`overflow-hidden transition-[max-height,margin,opacity,transform] duration-600
+                ease-[cubic-bezier(0.22,1,0.36,1)] text-xl text-center
+                ${packagesOpen ? "max-h-[1000px] mt-3 opacity-100 translate-y-0" : "max-h-0 mt-0 opacity-0 -translate-y-1"}
               `}
             >
               <div className="flex flex-col space-y-3">
@@ -169,7 +169,7 @@ export default function Navbar() {
                     className={`transform transition-all duration-300 ease-out
                       ${packagesOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}
                     `}
-                    style={{ transitionDelay: `${index * 100}ms` }} // stagger
+                    style={{ transitionDelay: `${index * 100}ms` }} // staggered links
                   >
                     {link.label}
                   </Link>
