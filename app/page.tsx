@@ -8,15 +8,15 @@ export default function Home() {
 const questions = [
   {
     q: "How much is the life drawing class package?",
-    a: "Hen party packages start from $300 per person, with a minimum booking fee of $3,000.",
+    a: "The life drawing class package starts from $300 per person.",
   },
   {
     q: "How long does the life drawing class run for?",
-    a: "Life drawing class runs for 2 hours.",
+    a: "The life drawing class runs for 2 hours.",
   },
   {
     q: "What to expect in a life drawing class?",
-    a: "A Hen Party life drawing class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels. Our art teacher guides you through the basics.",
+    a: "A hen party life drawing class is a nude art class with a male model posing for you while you draw using pencils, charcoals, and pastels.",
   },
   {
     q: "How can we book a hen party package?",
