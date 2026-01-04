@@ -28,11 +28,11 @@ export default function BackToTop() {
       className={`
         fixed bottom-6 right-6 z-[80]
         w-12 h-12 rounded-full
-        bg-[#6f1c0b] text-[#F3A6B6]
+        bg-[#ffffff] text-[#000000]
         flex items-center justify-center
         shadow-lg
         transition-all duration-300 ease-out
-        hover:scale-110 hover:bg-[#8a2a16]
+        hover:scale-110 hover:bg-black hover:text-white hover:cursor-pointer
         ${
           visible
             ? "opacity-100 translate-y-0"
