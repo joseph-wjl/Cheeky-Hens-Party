@@ -159,20 +159,40 @@ const toggle = (index: number) => {
         className="text-black py-20 text-center bg-white relative"
       >
         <div className="px-6 max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl mb-8 text-[#6f1c0b]">What our customers say</h2>
+          <h2 className="text-3xl sm:text-4xl mb-8 text-[#6f1c0b]">
+            What our customers say
+          </h2>
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-start py-8">
             {[
-              { name: 'Alex', text: '"This life drawing class was hilarious and so much fun! The model was charming and posed in creative ways, and our group couldn’t stop laughing while trying to capture him on paper. Definitely made my sister’s hen party unforgettable!"' },
-              { name: 'Cassie', text: '"We were a bit nervous booking something like this, but it couldn’t have been better! He was funny, flirty in a classy way, and kept the party buzzing. The photo opportunities alone made it worth it, every moment was a memory!"' },
-              { name: 'Dalilah', text: '"From start to finish, it was an amazing night! The life drawing session was playful and funny, and everyone got involved, even the ones who hadn’t drawn since school. The model made it easy to enjoy and capture some cheeky, memorable artwork."' }
+              {
+                name: "Alex",
+                text: `"This life drawing class was hilarious and so much fun! The model was charming and posed in creative ways, and our group couldn’t stop laughing while trying to capture him on paper. Definitely made my sister’s hen party unforgettable!"`,
+              },
+              {
+                name: "Cassie",
+                text: `"We were a bit nervous booking something like this, but it couldn’t have been better! He was funny, flirty in a classy way, and kept the party buzzing. The photo opportunities alone made it worth it, every moment was a memory!"`,
+              },
+              {
+                name: "Dalilah",
+                text: `"From start to finish, it was an amazing night! The life drawing session was playful and funny, and everyone got involved, even the ones who hadn’t drawn since school. The model made it easy to enjoy and capture some cheeky, memorable artwork."`,
+              },
             ].map((review, i) => (
-              <div key={i} className="flex flex-col bg-[#FEEFEC] w-full sm:w-[300px] h-auto sm:h-[500px] p-6 sm:p-8">
+              <div
+                key={i}
+                className="flex flex-col bg-[#FEEFEC] w-full sm:w-[300px] h-auto sm:h-[500px] p-6 sm:p-8"
+              >
+                {/* Filled brown circle, star untouched */}
                 <div className="flex items-center justify-center h-12 sm:h-20">
-                  <i className="fa-regular fa-star"></i>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#6f1c0b] flex items-center justify-center">
+                    <i className="fa-regular fa-star text-white text-sm sm:text-base"></i>
+                  </div>
                 </div>
+
                 <div className="flex-1 overflow-auto">
                   <p>{review.text}</p>
                 </div>
+
                 <div className="flex items-center justify-center h-10 sm:h-20">
                   <p>{review.name}</p>
                 </div>
@@ -181,6 +201,8 @@ const toggle = (index: number) => {
           </div>
         </div>
       </section>
+
+
 
       {/* Banana image sitting just above the Questions section */}
       <div className="relative w-full -mt-42 sm:-mt-42 lg:-mt-42">
