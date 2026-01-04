@@ -119,7 +119,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#e3e2df] text-center text-xs py-3">
+      <div className="text-center text-xs py-3">
         © {new Date().getFullYear()} Cheeky Hen Party
       </div>
     </footer>
