@@ -261,7 +261,7 @@ export default function BookingPage() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition"
+                className="px-12 py-3 bg-black text-white hover:bg-[#82310e] transition hover:cursor-pointer"
               >
                 Submit
               </button>
