@@ -69,7 +69,7 @@ export default function Home() {
             <div className="flex justify-center lg:justify-start">
               <a
                 href="/packages/classic-life-drawing"
-                className="px-6 py-2 sm:px-10 sm:py-3 text-white border border-white hover:text-black hover:border-black transition"
+                className="px-6 py-2 sm:px-10 sm:py-3 text-white border border-white hover:text-black hover:bg-white transition"
               >
                 Get Started
               </a>
