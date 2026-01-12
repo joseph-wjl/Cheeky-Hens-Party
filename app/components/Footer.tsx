@@ -47,7 +47,7 @@ export default function Footer() {
 
             <div className="flex gap-4 pt-2">
               <a
-                href="https://www.instagram.com/cheekyhenpartyhk"
+                href="https://www.instagram.com/cheekyhenparty"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-70 transition"
