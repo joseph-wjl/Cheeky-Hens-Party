@@ -65,3 +65,31 @@ select {
 .animate-fade {
   animation: fade 0.75s ease-out;
 }
+
+@keyframes footerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-footer {
+  opacity: 0;
+  animation: footerFadeUp 0.6s ease-out forwards;
+}
+
+.delay-0 {
+  animation-delay: 0ms;
+}
+
+.delay-1 {
+  animation-delay: 120ms;
+}
+
+.delay-2 {
+  animation-delay: 240ms;
+}
