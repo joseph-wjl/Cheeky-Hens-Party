@@ -41,7 +41,7 @@ export default function Navbar() {
 
             <li>
               <Link href="/" className={linkStyle("/")}>
-                Home
+                HOME
                 {isActive("/") && (
                   <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-white" />
                 )}
@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* PACKAGES DROPDOWN */}
             <li className="relative group">
               <span className={`flex items-center gap-1 ${linkStyle("/packages")}`}>
-                Packages <ChevronDown size={16} />
+                PACKAGES <ChevronDown size={16} />
               </span>
 
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-44 bg-[#FCCFC5] text-[#6f1c0b] text-sm text-center shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -68,7 +68,7 @@ export default function Navbar() {
             </li>
 
             <li>
-              <Link href="/gallery" className={linkStyle("/gallery")}>Gallery</Link>
+              <Link href="/gallery" className={linkStyle("/gallery")}>GALLERY</Link>
             </li>
 
             {/* CENTER LOGO */}
@@ -87,11 +87,11 @@ export default function Navbar() {
             </li>
 
             <li>
-              <Link href="/booking" className={linkStyle("/booking")}>Booking</Link>
+              <Link href="/booking" className={linkStyle("/booking")}>BOOKING</Link>
             </li>
 
             <li>
-              <Link href="/contact" className={linkStyle("/contact")}>Contact</Link>
+              <Link href="/contact" className={linkStyle("/contact")}>CONTACT</Link>
             </li>
           </ul>
 
@@ -133,7 +133,7 @@ export default function Navbar() {
         {/* MENU ITEMS */}
         <div className="flex flex-col items-center pt-10 px-6 text-2xl text-[#6f1c0b] gap-6">
 
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)}>HOME</Link>
 
           {/* MOBILE PACKAGES with ultra-smooth natural dropdown */}
           <div className="flex flex-col items-center w-full">
@@ -141,7 +141,7 @@ export default function Navbar() {
               onClick={() => setPackagesOpen(!packagesOpen)}
               className="flex items-center gap-2 w-full justify-center"
             >
-              Packages
+              PACKAGES
               <ChevronDown
                 className={`transition-transform duration-300 ${
                   packagesOpen ? "rotate-180" : ""
@@ -178,10 +178,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+          <Link href="/gallery" onClick={() => setMenuOpen(false)}>GALLERY</Link>
           <Link href="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
-          <Link href="/booking" onClick={() => setMenuOpen(false)}>Booking</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/booking" onClick={() => setMenuOpen(false)}>BOOKING</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}>CONTACT</Link>
         </div>
       </div>
     </>
