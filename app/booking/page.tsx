@@ -50,7 +50,7 @@ export default function BookingPage() {
   return (
     <>
       {/* HEADER */}
-      <div className="px-6 py-20 bg-[#e3e2df] text-center text-[#82310e]">
+      <div className="px-6 py-35 bg-[#3D0C00] text-center text-[#ffffff]">
         <Reveal>
           <h1 className="text-5xl sm:text-6xl font-bold mb-10 mt-10">
             Booking Request Form
