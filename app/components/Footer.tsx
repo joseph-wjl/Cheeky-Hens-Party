@@ -135,7 +135,7 @@ export default function Footer() {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-black text-white hover:bg-[#82310e] transition"
+                className="w-full py-3 bg-black text-white hover:bg-[#82310e] transition hover:cursor-pointer"
               >
                 Send Message
               </button>

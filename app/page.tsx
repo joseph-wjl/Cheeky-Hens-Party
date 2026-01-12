@@ -164,7 +164,7 @@ export default function Home() {
       {/* Hunks Section */}
       <section id="hunks" className="text-center bg-[#FEEFEC] px-6 py-20">
         <Reveal>
-          <h2 className="text-3xl sm:text-4xl py-10 text-[#6f1c0b]">
+          <h2 className="text-3xl sm:text-4xl pb-15 text-[#6f1c0b]">
             Feast your eyes on our Hunks
           </h2>
         </Reveal>
@@ -241,10 +241,10 @@ export default function Home() {
       </div>
 
       {/* Questions Section */}
-      <section id="questions" className="text-center bg-[#FEEFEC] pb-10 px-6">
+      <section id="questions" className="text-center bg-[#FEEFEC] pb-15 px-6">
         <div className="max-w-3xl mx-auto">
           <Reveal>
-            <h2 className="text-3xl sm:text-4xl pt-12 pb-10 text-[#6f1c0b]">
+            <h2 className="text-3xl sm:text-4xl pt-20 pb-15 text-[#6f1c0b]">
               Have questions? We've got the answers
             </h2>
           </Reveal>
