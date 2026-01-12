@@ -7,33 +7,41 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-3">
 
           {/* LEFT — Brand / Contact */}
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl">
+          <div className="space-y-3">
+            <h2 className="text-3xl md:text-4xl mb-10">
               CHEEKY HEN PARTY
             </h2>
 
             <p>
-              Email:{" "}
               <a
                 href="mailto:cheekyhenparty@gmail.com"
-                className="hover:underline"
+                target="_blank"
+                className="hover:opacity-70 transition"
               >
-                cheekyhenparty@gmail.com
+                  <i className="fa-solid fa-envelope text-xl mr-2" ></i>
+                  cheekyhenparty@gmail.com
               </a>
-            </p>
+            </p>  
 
             <p>
               <a
                 href="https://wa.me/85257856409"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:opacity-70 transition"
               >
-                WhatsApp: 5785-6409
+                  <i className="fa-brands fa-whatsapp text-xl mr-2" ></i>
+                  5785-6409
               </a>
             </p>
 
-            <p className="mt-8 text-sm max-w-sm">
+            <p>
+                  <i className="fa-solid fa-phone text-xl mr-2" ></i>
+                  5785-6409
+            </p>
+
+            
+
+            <p className="mt-10 text-sm max-w-sm">
               Follow us on social media for the latest news, specials, and events.
             </p>
 
@@ -65,17 +73,17 @@ export default function Footer() {
 
             <ul className="space-y-2">
               <li>
-                <a href="/packages/classic-life-drawing" className="hover:underline">
+                <a href="/packages/classic-life-drawing" className="underline">
                   Classic Life Drawing
                 </a>
               </li>
               <li>
-                <a href="/packages/cheeky-butler" className="hover:underline">
+                <a href="/packages/cheeky-butler" className="underline">
                   Cheeky Butler
                 </a>
               </li>
               <li>
-                <a href="/packages/nude-paint-sip" className="hover:underline">
+                <a href="/packages/nude-paint-sip" className="underline">
                   Nude Paint & Sip
                 </a>
               </li>
@@ -83,7 +91,7 @@ export default function Footer() {
           </div>
 
           {/* RIGHT — Mini Contact Form */}
-          <div className="sm:mt-10">
+          <div className="">
             <h3 className="text-xl font-bold mb-4">
               GOT A QUESTION?
             </h3>
