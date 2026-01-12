@@ -136,7 +136,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h2 className="text-3xl md:text-4xl pb-6">Contact Us</h2>
+            <h2 className="text-3xl md:text-4xl pb-6">CHEEKY HEN PARTY</h2>
 
             <p className="pb-2">
               Email:{" "}
@@ -147,17 +147,20 @@ export default function Footer() {
                 cheekyhenparty@gmail.com
               </a>
             </p>
-
             <a
               href="https://wa.me/85257856409"
               target="_blank"
               rel="noopener noreferrer"
-              className="block pb-4 hover:underline"
+              className=" pb-4 hover:underline"
             >
               WhatsApp: 5785-6409
             </a>
+            <p>5785-6409</p>
 
-            <p className="pb-3">Follow Us</p>
+            <div className="pt-10">
+              <p>Follow us on social media for the latest news, specials, and events.</p>
+            </div>
+            
 
             <div className="flex gap-4">
               <a
@@ -177,18 +180,6 @@ export default function Footer() {
                 <i className="fa-brands fa-square-facebook fa-2x" />
               </a>
             </div>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-bold text-lg pb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="/" className="hover:underline">Home</a></li>
-              <li><a href="/gallery" className="hover:underline">Gallery</a></li>
-              <li><a href="/faq" className="hover:underline">FAQ</a></li>
-              <li><a href="/booking" className="hover:underline">Booking Form</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
-            </ul>
           </div>
 
           {/* Services */}
