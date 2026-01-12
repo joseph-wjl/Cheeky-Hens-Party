@@ -68,7 +68,7 @@ export default function Footer() {
           {/* MIDDLE — Services */}
           <div className="space-y-4">
             <h3 className="font-bold text-lg">
-              Services
+              SERVICES
             </h3>
 
             <ul className="space-y-2">
@@ -145,7 +145,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="text-center py-4 text-xs">
         © {new Date().getFullYear()} Cheeky Hen Party
       </div>
