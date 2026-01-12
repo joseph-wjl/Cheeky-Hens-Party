@@ -130,7 +130,7 @@ export default function Footer() {
   return (
     <footer>
       {/* Main Footer */}
-      <div className="relative bg-[#FCCFC5] text-[#82310e] px-6 py-12 md:px-12 lg:px-20">
+      <div className="relative text-[#82310e] px-6 py-12 md:px-12 lg:px-20">
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 
@@ -195,7 +195,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#FFDED6] text-center py-3 text-xs text-[#82310e]">
+      <div className="text-center py-3 text-xs text-[#82310e]">
         <p>© {new Date().getFullYear()} Cheeky Hen Party</p>
       </div>
     </footer>
