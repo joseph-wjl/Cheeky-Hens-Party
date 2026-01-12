@@ -76,13 +76,13 @@ export default function BookingPage() {
       </div>
 
       {/* FORM */}
-      <div className="px-6 py-20 flex justify-center bg-[#FEEFEC]">
+      <div className="px-6 py-15 flex justify-center bg-[#FEEFEC]">
         <form
           onSubmit={handleSubmit}
           className="p-10 max-w-5xl w-full"
         >
           <Reveal>
-            <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-x-8 gap-y-4">
               {/* 1. First Name */}
               <div className="order-1">
                 <label className="block mb-1">First Name</label>

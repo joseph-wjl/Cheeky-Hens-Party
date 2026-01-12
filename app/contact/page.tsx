@@ -48,7 +48,7 @@ export default function Contact() {
       </section>
 
       {/* FORM */}
-      <div className="px-6 py-10 bg-[#FCCFC5] flex justify-center">
+      <div className="px-6 py-10 bg-[#FEEFEC] flex justify-center">
         <form
           action="https://formspree.io/f/mykylygk"
           method="POST"
@@ -56,7 +56,7 @@ export default function Contact() {
           onSubmit={() => setSubmitted(true)}
         >
           <Reveal>
-            <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-x-8 gap-y-4">
               {/* First Name */}
               <div className="order-1">
                 <label className="block mb-1">First Name</label>
