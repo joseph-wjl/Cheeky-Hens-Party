@@ -27,7 +27,7 @@ export default function Home() {
       a: "Private indoor spaces like hotel suites, function rooms, party rooms, homes, or Airbnb. We can help arrange a venue for a small booking fee or host the class in our art studio.",
     },
     {
-      q: "Why should you book a life drawing class for a hen party?",
+      q: "Why should we book a life drawing class for a hen party?",
       a: `• It's hilarious and memorable! Nothing breaks the ice faster than sketching a male model while laughing with friends.
 • Everyone can join in! No artistic skills required.
 • A touch of naughty! Flirty enough to get the giggles going, but still classy.
